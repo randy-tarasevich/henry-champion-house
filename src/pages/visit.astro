@@ -73,7 +73,7 @@ const wasSent = Astro.url.searchParams.get("sent") === "1";
             id="name"
             name="name"
             required
-            class="mt-1 w-full border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
+            class="mt-1 w-full rounded-lg border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
           />
         </div>
         <div>
@@ -83,7 +83,7 @@ const wasSent = Astro.url.searchParams.get("sent") === "1";
             id="email"
             name="email"
             required
-            class="mt-1 w-full border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
+            class="mt-1 w-full rounded-lg border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
           />
         </div>
         <div>
@@ -93,7 +93,7 @@ const wasSent = Astro.url.searchParams.get("sent") === "1";
             name="message"
             rows="5"
             required
-            class="mt-1 w-full border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
+            class="mt-1 w-full rounded-lg border border-[var(--color-stone)] bg-white px-3 py-2 text-sm focus:border-[var(--color-brick)] focus:outline-none"
           ></textarea>
         </div>
         <button type="submit" class="btn-primary">Send Message</button>
