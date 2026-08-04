@@ -145,6 +145,14 @@ Pulled directly from the Colchester Historical Society and the National Register
 
 ---
 
+## Contact form (decided 2026-08-04)
+
+Visit/Contact form posts directly to Web3Forms (`api.web3forms.com/submit`) rather than a custom Cloudflare Worker endpoint — simpler, no email service to wire up separately. **Still needs Randy's real Web3Forms access key** dropped into the hidden `access_key` field in `src/pages/visit.astro` before the form actually delivers anywhere; currently a placeholder value.
+
+## Possible future addition (out of current scope)
+
+Randy noted 2026-08-04: if Charles ends up sending a large batch of additional photos ("photo dump"), a dedicated Gallery page is a reasonable addition. This would be a sixth page beyond the five in the signed proposal, so it falls under the proposal's out-of-scope billing ($100/hr in 30-minute increments) rather than the flat $1,500 fee. Not started — just flagged for later.
+
 ## Suggested next step
 
 ~~Draft actual page copy for Home and Donate first~~ — done, see `Champion_House_Copy_Home_Donate.md`.
