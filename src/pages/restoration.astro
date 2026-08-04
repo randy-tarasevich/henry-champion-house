@@ -48,7 +48,8 @@ const roofWeekPhotos = [
         <img
           src="/images/foreclosure-sign-blurred.jpg"
           alt="The public auction foreclosure sale sign posted at 526 Westchester Rd, January 2024"
-          class="w-full rounded-lg object-cover shadow-sm"
+          class="w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+          data-lightbox
         />
         <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">
           The public auction notice posted at 526 Westchester Rd, January 2024.
@@ -65,9 +66,9 @@ const roofWeekPhotos = [
         starting point for everything that's followed.
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <img src="/images/restoration-before-siding.jpg" alt="Weathered siding and overgrown grounds at the time of acquisition" class="h-56 w-full rounded-lg object-cover shadow-sm" />
-        <img src="/images/restoration-before-aerial-winter.jpg" alt="Winter aerial view of the full property, showing the house, pool, and barn" class="h-56 w-full rounded-lg object-cover shadow-sm" />
-        <img src="/images/driveway-winter.jpg" alt="Bare-winter approach shot up the driveway" class="h-56 w-full rounded-lg object-cover shadow-sm sm:col-span-2" />
+        <img src="/images/restoration-before-siding.jpg" alt="Weathered siding and overgrown grounds at the time of acquisition" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox />
+        <img src="/images/restoration-before-aerial-winter.jpg" alt="Winter aerial view of the full property, showing the house, pool, and barn" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox />
+        <img src="/images/roof-damage-closeup.jpg" alt="Close-up of the old roof's rotted fascia, exposed rafter tails, and damaged soffit venting" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm sm:col-span-2" data-lightbox />
       </div>
     </section>
 
@@ -87,7 +88,7 @@ const roofWeekPhotos = [
       </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-3">
         {roofWeekPhotos.map((photo) => (
-          <img src={photo.src} alt={photo.alt} class="h-40 w-full rounded-lg object-cover shadow-sm" />
+          <img src={photo.src} alt={photo.alt} class="h-40 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox />
         ))}
       </div>
       <p class="mt-4 text-sm italic text-[var(--color-charcoal)]">
@@ -105,7 +106,8 @@ const roofWeekPhotos = [
       <img
         src="/images/home-front-overcast.png"
         alt="The house today, front elevation with patriotic bunting and cannon on the lawn"
-        class="mt-6 h-96 w-full rounded-lg object-cover shadow-sm"
+        class="mt-6 h-96 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+        data-lightbox
       />
     </section>
 
