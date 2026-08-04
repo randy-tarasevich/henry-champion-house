@@ -1,0 +1,973 @@
+Delivered-To: info@shorelinewebsolutions.com
+Received: by 2002:a05:6124:2788:b0:44c:7db4:d9d with SMTP id bl8csp808275vlb;
+        Thu, 16 Jul 2026 13:06:27 -0700 (PDT)
+X-Received: by 2002:a17:903:2ec5:b0:2ca:d7a3:3723 with SMTP id d9443c01a7336-2cee9b58e90mr157629725ad.29.1784232386749;
+        Thu, 16 Jul 2026 13:06:26 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1784232386; cv=none;
+        d=google.com; s=arc-20260327;
+        b=R40gBn0ITZCDANtpjUf6GDqq5C0lKp/UBpRC/h9TSfLeH0EBEe+Mv6ndXA2uYI7rLz
+         hGtFQn+iGX+ytzv+/P/+158pENdEzrvaqCHhe7AjnaTG8wZ8bY/Vbj7P2sKMNHjVPfAi
+         5f0DpOUDzeQG6tTnmTRle9nhwTvjrhhQw7X2a6CTZbqEkq00SmlHF69xieiEjFVH/ERj
+         7GpYyridi01r9B3+g/g3IIEWNV1TBW3L9ovaex1ckx7OB0k0eT4oXMXK+Vwa9bz+KhCZ
+         ctqHcJj2ju0PsLwDxrCtv7posyghJsKCeU7cjuSIOAvf918evzbdGWlCn2SFCDOGSlCk
+         JMjQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=date:to:references:message-id:subject:mime-version:from
+         :mail-alias-created-date:dkim-signature;
+        bh=ahK/pMS+d5OzesqOMRHr7hshR6gUCgBRiHxj5AmJ1UQ=;
+        fh=n0b7n5UIJhrHwXNNdmVy2gN6gS9/lEUbsFr50JU7qtc=;
+        b=o5SRT6DtOOj6w9uIW1nlL+daOzdDKtt6Hb8JK68WBOm5PhrTyR0m93msiSlePWtAWD
+         ntFl/mysdMD/EyziI7LlC21Rq0ThNTkTNf3apQTAWml+/zoOV3+67gjLVOm1TPPBmvO0
+         uWYMEvmVLqJNygi4AiPTFz3I+F5qEiVjLnTw7sdpVRGc+YnQvPbUTQPKMmjU1EWWIzTD
+         NhW8k9vtmnjRLIWFcJgi+JNXojuZPTUOpRTKKh00JbJUMVJVrYn7a9If3UZQNUlYupge
+         5SiZl3YRsATdSWSPCAKTMtGIS56amGdrs8BeYuGCmN8Sk3pZacmh5MCcbr9+1grlOhNo
+         k7/g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@icloud.com header.s=1a1hai header.b=r3SSnqQa;
+       spf=pass (google.com: domain of charlespjordan@icloud.com designates 57.103.74.241 as permitted sender) smtp.mailfrom=charlespjordan@icloud.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
+Return-Path: <charlespjordan@icloud.com>
+Received: from outbound.ms.icloud.com (ms-2004i-snip4-11.eps.apple.com. [57.103.74.241])
+        by mx.google.com with ESMTPS id d9443c01a7336-2cf10519156si70477965ad.100.2026.07.16.13.06.26
+        for <info@shorelinewebsolutions.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Thu, 16 Jul 2026 13:06:26 -0700 (PDT)
+Received-SPF: pass (google.com: domain of charlespjordan@icloud.com designates 57.103.74.241 as permitted sender) client-ip=57.103.74.241;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@icloud.com header.s=1a1hai header.b=r3SSnqQa;
+       spf=pass (google.com: domain of charlespjordan@icloud.com designates 57.103.74.241 as permitted sender) smtp.mailfrom=charlespjordan@icloud.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=icloud.com
+Received: from outbound.ms.icloud.com (unknown [127.0.0.2])
+	by p00-icloudmta-asmtp-us-west-3a-100-percent-4 (Postfix) with ESMTPS id A827518000CC
+	for <info@shorelinewebsolutions.com>; Thu, 16 Jul 2026 20:06:24 +0000 (UTC)
+X-ICL-RepId: 019f6c89-986d-74ca-a701-e52d6d6322e6
+X-ICL-Out-Info: HUtFAUMEWwJACUgATUQeDx5WFlZNRAJCTQ5LHVwBXBxBAVYBXAJLVxQEG1sMRQdXA0kSXB9TClwwUBtfAkIPHBNWFRMLU1ZbE1UXRgkZCF0dGQpQUAZLWhVVFw4CQh9QH0wWV0NaGBwZWhRcGFNFUR9UWEMZRVZpQQtPHV0ZWxxCZFhXCQoCURxWDVdDVARfUFQRV1ALKAU1CE11KQRGCkh7Th5ZBVkHXQBBAVwaWgcxAT1xLw9dAUQPOFoOWwRHFBcbXAAJS0YJSR0OBFQHXQVd
+Dkim-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com; s=1a1hai; t=1784232386; x=1786824386; bh=ahK/pMS+d5OzesqOMRHr7hshR6gUCgBRiHxj5AmJ1UQ=; h=From:Content-Type:Mime-Version:Subject:Message-Id:To:Date:x-icloud-hme; b=r3SSnqQacq1Im/PHmfft4EdrtL9CdeGDuIjQwnImtaxZGFvLp7kv72zxsxpC7K/yK1g+OGNq46hnIqr4hS0GUZ+4IHazc5Hz2ZX4+qx8BobUHuTaMCZErDR005qssshfO1c/HrQNbvvaDk4yIlHLH/fVIjevZo3wKebYZfpEvAZM3ODMq9+yx2PfFrod8UeyveERqgwkUv+R439xyirl6fPM4ap3nG8Mn5o+Hq8O5HENko6FUirCsYFK4bXENH133Go04ZwFP3Of4Vg7PIUTdKo3Ywh8T9es45Chc6vQm80ESTnOVRhnfhs7K/Z/tL5hrp+DS5gyCiasHQLlyKf61w==
+mail-alias-created-date: 1349146894000
+Received: from smtpclient.apple (unknown [17.57.154.37])
+	by p00-icloudmta-asmtp-us-west-3a-100-percent-4 (Postfix) with ESMTPSA id C16D918000D1
+	for <info@shorelinewebsolutions.com>; Thu, 16 Jul 2026 20:06:23 +0000 (UTC)
+From: charlespjordan@icloud.com
+Content-Type: multipart/alternative;
+	boundary="Apple-Mail=_75FE41E4-19A5-4E24-9DB9-C530E8FA5256"
+Mime-Version: 1.0 (Mac OS X Mail 16.0 \(3864.600.51.1.1\))
+Subject: Nonprofit Worksheet - Mission Statement
+Message-Id: <C7E15FD3-88B6-4225-9921-15A8EBB86346@icloud.com>
+References: <O7EQSqvwTdi_FMJtMUq9Kw@geopod-ismtpd-12>
+To: Randy Tarasevich <info@shorelinewebsolutions.com>
+Date: Thu, 16 Jul 2026 16:06:11 -0400
+X-Mailer: Apple Mail (2.3864.600.51.1.1)
+X-Proofpoint-ORIG-GUID: peMOcgxtZ_S3bzkTP6hDRmk0eSO5Gh3-
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjYwNzE2MDIwNSBTYWx0ZWRfX9eU4Xpyq+Icx
+ gvP9GpW1iA6SKZVNwV5C7ZUG7TR+OLFVtdQ8Hzzl2gjawCPTNyO0I8ovrLkJ7+bOulsS49km9M7
+ OdBMHIUOBGbyAPGmv2j0BOrwMtnlRySJjjwjq2KfelWQ0GiA58IhzDEJ3572DS1T7f458U+Xnkk
+ 5TWT71v4i3XsM05LTkWS0MbFNetrL54GwmIuQw89hkefKpJ1Hmkluo7weDZFr+sQ4kgpvmAugGM
+ 7t2JlLdhXNrSXkQh0ktLTrXrptgAp2KbuZ8I23CDbcL4r/OuAbOJs+IqVxNbUsjSydScPb881Li
+ ns01HpSmlSLsF5n1y98
+X-Proofpoint-GUID: peMOcgxtZ_S3bzkTP6hDRmk0eSO5Gh3-
+
+
+--Apple-Mail=_75FE41E4-19A5-4E24-9DB9-C530E8FA5256
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+	charset=utf-8
+
+
+
+> Begin forwarded message:
+>=20
+> From: "service@nonprofitadvisor.org" =
+<noreply+f865a07e1e9c10f9@formstack.com>
+> Subject: Nonprofit Worksheet
+> Date: May 19, 2026 at 5:09:59=E2=80=AFPM EDT
+> To: charlespjordan@icloud.com
+> Reply-To: service@nonprofitadvisor.org
+>=20
+> =09
+> Formstack Submission For: Client Intake Form - Inc Authority <>
+> Submitted at 05/19/26 5:09 PM
+> Corporation Name:	GENERAL HENRY CHAMPION TRUST, INC=20
+> Primary Contact Name:	Charles Jordan
+> Your Mailing Address :	526 Westchester Rd
+> Colchester, CT 06415
+> Is the address above to be used for your IRS Application documents?:	=
+Yes
+> Enter the address for the IRS Application. :=09
+> Contact Email:	charlespjordan@icloud.com =
+<mailto:charlespjordan@icloud.com>
+> Contact Phone:	(917) 460-2260
+> Number of Initial Directors for the IRS Application:	3
+> First Director:	Charles Jordan
+> Second Director:	Maria Jordan
+> Third Director :	Elizabeth Jordan
+> Fourth Director :=09
+> Fifth Director:=09
+> Does your organization have a website?:	No
+> Website URL:=09
+> Enter Your Mission Statement:	GENERAL HENRY CHAMPION TRUST, INC. is =
+organized and operated exclusively for charitable, educational, and =
+historical purposes within the meaning of Section 501(c)(3) of the =
+Internal Revenue Code. The Trust is dedicated to the preservation, =
+restoration, and protection of the 1790 General Henry Champion House in =
+Colchester, Connecticut=E2=80=94an architecturally significant William =
+Sprats=E2=80=93designed structure listed on the State and National =
+Registers of Historic Places. The organization=E2=80=99s purpose is to =
+restore the house and its historic landscape as closely as possible to =
+their documented original appearance, including architectural elements =
+described in the National Register nomination such as the gambrel roof, =
+Ionic=E2=80=91columned entry portico, triangular=E2=80=91pedimented =
+dormers with mutules, twelve=E2=80=91over=E2=80=91twelve sash windows, =
+and the historic stone wall and setting. The Trust conducts historical =
+research, architectural conservation, preservation planning, and public =
+education activities that interpret the life and legacy of General Henry =
+Champion, a Revolutionary War officer whose contributions are documented =
+in the National Register filing. All activities are carried out to =
+preserve this nationally significant landmark, expand public =
+understanding of Connecticut=E2=80=99s architectural and =
+Revolutionary=E2=80=91era history, and ensure that the property remains =
+a cultural, educational, and historical resource for future generations.
+> What is the charitable purpose of your organization?:	Environmental =
+Quality, Protection, Beautification
+> Describe Your Organization's Activities and Programs:	GENERAL HENRY =
+CHAMPION TRUST, INC. serves the public by preserving and restoring a =
+nationally significant historic property and making its architectural, =
+cultural, and educational value accessible to all. The organization =
+serves students, researchers, historians, preservationists, local =
+residents, visitors to Connecticut, and future generations who benefit =
+from the conservation of the 1790 General Henry Champion House and its =
+documented architectural features. By protecting this State and National =
+Register landmark and sharing its Revolutionary=E2=80=91era history, the =
+Trust provides a public benefit to anyone seeking to learn from, study, =
+or experience Connecticut=E2=80=99s architectural and historical =
+heritage.
+> Do you or will you attempt to influence legislation?:	No
+> Do you or will you pay compensation to any of your officers, =
+directors, or trustees?:	No
+> Do you or will you donate funds to or pay expenses for individual(s)?:	=
+No
+> Do you or will you conduct activities or provide grants or other =
+assistance to individual(s) or organization(s) outside the United =
+States?:	No
+> Do you or will you engage in financial transactions (for example, =
+loans, payments, rents, etc.) with any of your officers, directors, or =
+trustees, or any entities they own or control?:	No
+> Do you or will you operate bingo or other gaming activities?:	No
+> Do you or will you provide disaster relief?:	No
+> Where will your organization conduct its activities?:	United States =
+Only
+> Name the state and city in which the organization will conduct =
+activities and programs.:	Colchester, CT
+> Name the countries in which the organization will conduct activities, =
+programs or provide monetary assistance.:=09
+> Who will participate in your activities?:	All Individuals and =
+groups
+> Is your organization either of the following? :	Not a School or =
+a Church
+> Will your organization offer scholarships?:	No
+> Will the organization engage in financial transactions (for example, =
+loans, payments or rents) with yourself or entities you own or control?:	=
+No. The organization will not engage in loans, payments, rents, or other =
+financial transactions with its founders, directors, officers, or any =
+entities they own or control. All personal living expenses, utilities, =
+and any repairs or improvements made prior to the formation of the =
+nonprofit were paid personally by the founders and will not be =
+reimbursed by the organization. The Trust will only expend funds on =
+preservation and restoration activities that directly further its =
+charitable and historical mission and that comply with IRS rules =
+prohibiting private benefit and self=E2=80=91dealing.
+> Do you or will you provide any of the following? :	Sales of =
+Merchandise
+> Have you adopted bylaws for your organization?:	No
+> Optional: Upload additional information relevant to your application. =
+:=09
+> Will your organization receive more than $50,000 in this year or any =
+of the next three years?:	No
+> Projected Annual Revenue Estimates (Total of Gifts, Grants, =
+Contributions and Donations) :	This Year =3D $0 - $25,000
+> Year 2 =3D $0 - $25,000
+> Year 3 =3D $0 - $25,000
+> Year 4 =3D $0 - $25,000
+> Will the organization have any Program Service Revenue?:	No
+> The total of Program Service Revenue the organization will generate =
+this year. Include gross receipts from the sale of products, =
+merchandise, rental income and other activities related to your exempt =
+purpose.:=09
+> The total of Program Service Revenue the organization will generate in =
+your second year. Include gross receipts from the sale of products, =
+merchandise, rental income and other activities related to your exempt =
+purpose.:=09
+> The total of Program Service Revenue the organization will generate in =
+your third year. Include gross receipts from the sale of products, =
+merchandise, rental income and other activities related to your exempt =
+purpose. :=09
+> The total of Program Service Revenue the organization will generate in =
+your fourth year. Include gross receipts from the sale of products, =
+merchandise, rental income and other activities related to your exempt =
+purpose. :=09
+> Will or has the organization received an unusual grant? An unusual =
+grant is a one-time grant that has a significant impact on the =
+financials of the organization.:	No
+> Amount of Unusual Grant.:=09
+> The Unusual Grant was received or is anticipated in::=09
+> Will the organization have fundraising expenses?:	Yes
+> Estimated amount of annual fundraising expenses::	Less than $1,000
+> Will the organization make contributions, grants or disbursements to =
+individuals or other organizations? This includes disbursements for =
+scholarships, grants to individuals or simular amounts paid out. :	=
+No
+> Estimated Total Program Disbursements this year::=09
+> Estimated Total Program Disbursements in your second year::=09
+> Estimated Total Program Disbursements in your third year::=09
+> Estimated Total Program Disbursements in your fourth year::=09
+> Will the organization compensate officers, directors or trustees?:	=
+No
+> When does the organization intend to compensate officers, directors or =
+trustees?:=09
+> Estimated Annual Compensation for Officers, Directors and Trustees::=09=
+
+> Will the organization have employees?:	No
+> When does the organization intend to have employees?:=09
+> Will the organization rent a facility?:	No
+> When does the organization intend to rent a facility?:=09
+> Estimated Monthly Rent:=09
+> Estimated Monthly Overhead (Phone, Utilities, Permits, Licencing, =
+Website, Office Expenses, Travel):	6630
+> Do you have any questions? :=09
+>=20
+> =C2=A9 2026 Intellistack (formerly Formstack). All rights reserved.
+> This is a customer service email.
+> Intellistack, 50 South Steele Street, Suite 500, Denver, CO 80209
+>=20
+
+
+--Apple-Mail=_75FE41E4-19A5-4E24-9DB9-C530E8FA5256
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=utf-8
+
+<html aria-label=3D"message body"><head><meta http-equiv=3D"content-type" =
+content=3D"text/html; charset=3Dutf-8"></head><body =
+style=3D"overflow-wrap: break-word; -webkit-nbsp-mode: space; =
+line-break: after-white-space;"><br =
+id=3D"lineBreakAtBeginningOfMessage"><div><br><blockquote =
+type=3D"cite"><div>Begin forwarded message:</div><br =
+class=3D"Apple-interchange-newline"><div style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);"><b>From: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;">"service@nonprofitadvisor.org" =
+&lt;noreply+f865a07e1e9c10f9@formstack.com&gt;<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family: -webkit-system-font, =
+Helvetica Neue, Helvetica, sans-serif; color:rgba(0, 0, 0, =
+1.0);"><b>Subject: </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;"><b>Nonprofit Worksheet</b><br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family: -webkit-system-font, =
+Helvetica Neue, Helvetica, sans-serif; color:rgba(0, 0, 0, =
+1.0);"><b>Date: </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, sans-serif;">May 19, =
+2026 at 5:09:59=E2=80=AFPM EDT<br></span></div><div style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;"><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif; color:rgba(0, 0, 0, 1.0);"><b>To: </b></span><span =
+style=3D"font-family: -webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;">charlespjordan@icloud.com<br></span></div><div =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px;"><span style=3D"font-family: -webkit-system-font, =
+Helvetica Neue, Helvetica, sans-serif; color:rgba(0, 0, 0, =
+1.0);"><b>Reply-To: </b></span><span style=3D"font-family: =
+-webkit-system-font, Helvetica Neue, Helvetica, =
+sans-serif;">service@nonprofitadvisor.org<br></span></div><br><div><meta =
+charset=3D"UTF-8"><table class=3D"head-wrap" style=3D"margin: 0px auto =
+12px; padding: 0px; border-collapse: collapse; -webkit-font-smoothing: =
+antialiased; width: 1043px; color: rgb(69, 85, 96); font-family: =
+Helvetica; font-size: 14px; font-style: normal; font-variant-caps: =
+normal; font-weight: 400; letter-spacing: normal; orphans: 2; =
+text-align: start; text-transform: none; white-space: normal; widows: 2; =
+word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: =
+rgb(247, 247, 248); text-decoration-line: none; =
+text-decoration-thickness: auto; text-decoration-style: solid;"><tbody =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><td style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"></td><td class=3D"header =
+container" style=3D"margin: 0px auto 31px; padding: 0px; =
+-webkit-font-smoothing: antialiased; display: block; max-width: 700px; =
+clear: both;"><div class=3D"content" style=3D"margin: 19px auto 31px; =
+padding: 0px 19px; -webkit-font-smoothing: antialiased; display: block; =
+max-width: 700px;"><table width=3D"100%" style=3D"margin: 0px; padding: =
+0px; border-collapse: collapse; -webkit-font-smoothing: antialiased; =
+width: 662px;"><tbody style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><tr style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"><td style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased; text-align: =
+left;"><img =
+src=3D"https://nonprofitadvisor.formstack.com/admin/themes/default/images/=
+intellistack_logo.png" alt=3D"Intellistack Logo" width=3D"150" =
+height=3D"52" style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; max-width: 100%;"></td><td =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+text-align: right;"><img =
+src=3D"https://nonprofitadvisor.formstack.com/admin/themes/default/images/=
+Formstack_Forms_Product_Logo.png" alt=3D"Forms" width=3D"80" height=3D"25"=
+ style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased; max-width: 100%;"></td></tr></tbody></table></div></td><td =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"></td></tr></tbody></table><table class=3D"body-wrap" =
+style=3D"margin: 0px; padding: 0px; border-collapse: collapse; =
+-webkit-font-smoothing: antialiased; width: 1043px; color: rgb(108, 122, =
+133); font-family: Helvetica; font-size: 14px; font-style: normal; =
+font-variant-caps: normal; font-weight: 400; letter-spacing: normal; =
+orphans: 2; text-align: start; text-transform: none; white-space: =
+normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+background-color: rgb(247, 247, 248); text-decoration-line: none; =
+text-decoration-thickness: auto; text-decoration-style: solid;"><tbody =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><td style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"></td><td class=3D"container" =
+style=3D"margin: 0px auto 31px; padding: 0px 0px 19px; =
+-webkit-font-smoothing: antialiased; display: block; max-width: 700px; =
+clear: both; background-color: rgb(255, 255, 255); border-radius: 3px; =
+border: 1px solid rgb(207, 212, 216);"><div class=3D"content" =
+style=3D"margin: 0px auto; padding: 0px; -webkit-font-smoothing: =
+antialiased; display: block; max-width: 700px;"><table style=3D"margin: =
+0px; padding: 0px; border-collapse: collapse; -webkit-font-smoothing: =
+antialiased; width: 700px;"><tbody style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><tr style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"><td class=3D"title-wrap" =
+style=3D"margin: 0px; padding: 19px 31px; -webkit-font-smoothing: =
+antialiased; border-bottom: 1px solid rgb(207, 212, 216);"><h4 =
+style=3D"margin: 0px; padding: 0px; line-height: 28px; font-weight: 700; =
+font-size: 21px; -webkit-font-smoothing: antialiased;"><strong =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+color: rgb(21, 35, 43);">Formstack Submission For:<span =
+class=3D"Apple-converted-space">&nbsp;</span><a href=3D"" style=3D"margin:=
+ 0px; padding: 0px; -webkit-font-smoothing: antialiased; color: rgb(1, =
+151, 236); text-decoration: none;">Client Intake Form - Inc =
+Authority</a></strong><br style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><span style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased; font-weight: =
+400;">Submitted at 05/19/26 5:09 PM</span></h4></td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"><td style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><div =
+class=3D"fs-submission-table-wrapper" style=3D"margin: 0px; padding: =
+19px 31px 12px; -webkit-font-smoothing: antialiased; text-align: =
+left;"><table class=3D"fs-submission-table" style=3D"margin: 0px; =
+padding: 0px; border-collapse: collapse; -webkit-font-smoothing: =
+antialiased; border: 0px; font-size: 16px; width: 638px;"><tbody =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Corporation Name:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">GENERAL HENRY CHAMPION TRUST, INC<span =
+class=3D"Apple-converted-space">&nbsp;</span></td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Primary =
+Contact Name:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">Charles Jordan</td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Your Mailing =
+Address :</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">526 Westchester Rd<br style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;">Colchester, CT =
+06415</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Is the address above to be used for =
+your IRS Application documents?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Yes</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Enter the address for the IRS =
+Application. :</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Contact =
+Email:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);"><a href=3D"mailto:charlespjordan@icloud.com" =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+color: rgb(1, 151, 236); text-decoration: =
+none;">charlespjordan@icloud.com</a></td></tr><tr style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased; background: rgb(207, =
+212, 216);"><td class=3D"fs-submission-table--label" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; =
+font-weight: 700; color: rgb(108, 122, 133);">Contact Phone:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">(917) 460-2260</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Number of Initial Directors for the IRS =
+Application:</td><td class=3D"fs-submission-table--value" style=3D"margin:=
+ 0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">3</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">First Director:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Charles Jordan</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Second Director:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Maria Jordan</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Third Director :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Elizabeth Jordan</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Fourth Director :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Fifth Director:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Does your organization have a =
+website?:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Website URL:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Enter Your Mission Statement:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">GENERAL HENRY CHAMPION TRUST, INC. is organized and operated =
+exclusively for charitable, educational, and historical purposes within =
+the meaning of Section 501(c)(3) of the Internal Revenue Code. The Trust =
+is dedicated to the preservation, restoration, and protection of the =
+1790 General Henry Champion House in Colchester, Connecticut=E2=80=94an =
+architecturally significant William Sprats=E2=80=93designed structure =
+listed on the State and National Registers of Historic Places. The =
+organization=E2=80=99s purpose is to restore the house and its historic =
+landscape as closely as possible to their documented original =
+appearance, including architectural elements described in the National =
+Register nomination such as the gambrel roof, Ionic=E2=80=91columned =
+entry portico, triangular=E2=80=91pedimented dormers with mutules, =
+twelve=E2=80=91over=E2=80=91twelve sash windows, and the historic stone =
+wall and setting. The Trust conducts historical research, architectural =
+conservation, preservation planning, and public education activities =
+that interpret the life and legacy of General Henry Champion, a =
+Revolutionary War officer whose contributions are documented in the =
+National Register filing. All activities are carried out to preserve =
+this nationally significant landmark, expand public understanding of =
+Connecticut=E2=80=99s architectural and Revolutionary=E2=80=91era =
+history, and ensure that the property remains a cultural, educational, =
+and historical resource for future generations.</td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">What is the =
+charitable purpose of your organization?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Environmental Quality, Protection, Beautification</td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Describe Your =
+Organization's Activities and Programs:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">GENERAL HENRY CHAMPION TRUST, INC. serves the public by preserving =
+and restoring a nationally significant historic property and making its =
+architectural, cultural, and educational value accessible to all. The =
+organization serves students, researchers, historians, preservationists, =
+local residents, visitors to Connecticut, and future generations who =
+benefit from the conservation of the 1790 General Henry Champion House =
+and its documented architectural features. By protecting this State and =
+National Register landmark and sharing its Revolutionary=E2=80=91era =
+history, the Trust provides a public benefit to anyone seeking to learn =
+from, study, or experience Connecticut=E2=80=99s architectural and =
+historical heritage.</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Do you or will you attempt to influence =
+legislation?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Do you or =
+will you pay compensation to any of your officers, directors, or =
+trustees?:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Do you or will you donate funds to or =
+pay expenses for individual(s)?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Do you or will you conduct activities =
+or provide grants or other assistance to individual(s) or =
+organization(s) outside the United States?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Do you or will you engage in financial =
+transactions (for example, loans, payments, rents, etc.) with any of =
+your officers, directors, or trustees, or any entities they own or =
+control?:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Do you or will you operate bingo or =
+other gaming activities?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Do you or =
+will you provide disaster relief?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Where will your organization conduct =
+its activities?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">United States Only</td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Name the =
+state and city in which the organization will conduct activities and =
+programs.:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">Colchester, CT</td></tr><tr style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased; background: rgb(247, =
+247, 248);"><td class=3D"fs-submission-table--label" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; =
+font-weight: 700; color: rgb(108, 122, 133);">Name the countries in =
+which the organization will conduct activities, programs or provide =
+monetary assistance.:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Who will =
+participate in your activities?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, 43);">All =
+Individuals and groups<br style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Is your =
+organization either of the following? :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, 43);">Not =
+a School or a Church</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Will your organization offer =
+scholarships?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Will the =
+organization engage in financial transactions (for example, loans, =
+payments or rents) with yourself or entities you own or =
+control?:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">No. The organization will not engage in loans, =
+payments, rents, or other financial transactions with its founders, =
+directors, officers, or any entities they own or control. All personal =
+living expenses, utilities, and any repairs or improvements made prior =
+to the formation of the nonprofit were paid personally by the founders =
+and will not be reimbursed by the organization. The Trust will only =
+expend funds on preservation and restoration activities that directly =
+further its charitable and historical mission and that comply with IRS =
+rules prohibiting private benefit and self=E2=80=91dealing.</td></tr><tr =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: antialiased; =
+background: rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Do you or =
+will you provide any of the following? :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Sales of Merchandise</td></tr><tr style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Have you adopted bylaws for your =
+organization?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Optional: =
+Upload additional information relevant to your application. :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Will your organization receive more =
+than $50,000 in this year or any of the next three years?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Projected Annual Revenue Estimates =
+(Total of Gifts, Grants, Contributions and Donations) :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, 43);">This =
+Year =3D $0 - $25,000<br style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;">Year 2 =3D $0 - $25,000<br =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;">Year 3 =3D $0 - $25,000<br style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;">Year 4 =3D $0 - =
+$25,000</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Will the organization have any Program =
+Service Revenue?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">The total of =
+Program Service Revenue the organization will generate this year. =
+Include gross receipts from the sale of products, merchandise, rental =
+income and other activities related to your exempt purpose.:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">The total of Program Service Revenue =
+the organization will generate in your second year. Include gross =
+receipts from the sale of products, merchandise, rental income and other =
+activities related to your exempt purpose.:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">The total of Program Service Revenue =
+the organization will generate in your third year. Include gross =
+receipts from the sale of products, merchandise, rental income and other =
+activities related to your exempt purpose. :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">The total of Program Service Revenue =
+the organization will generate in your fourth year. Include gross =
+receipts from the sale of products, merchandise, rental income and other =
+activities related to your exempt purpose. :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Will or has the organization received =
+an unusual grant? An unusual grant is a one-time grant that has a =
+significant impact on the financials of the organization.:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Amount of Unusual Grant.:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">The Unusual Grant was received or is =
+anticipated in::</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Will the =
+organization have fundraising expenses?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">Yes</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Estimated amount of annual fundraising =
+expenses::</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">Less than $1,000</td></tr><tr style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased; background: rgb(247, =
+247, 248);"><td class=3D"fs-submission-table--label" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; =
+font-weight: 700; color: rgb(108, 122, 133);">Will the organization make =
+contributions, grants or disbursements to individuals or other =
+organizations? This includes disbursements for scholarships, grants to =
+individuals or simular amounts paid out. :</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Estimated Total Program Disbursements =
+this year::</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Estimated Total Program Disbursements =
+in your second year::</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Estimated =
+Total Program Disbursements in your third year::</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Estimated Total Program Disbursements =
+in your fourth year::</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Will the =
+organization compensate officers, directors or trustees?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">When does the organization intend to =
+compensate officers, directors or trustees?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Estimated Annual Compensation for =
+Officers, Directors and Trustees::</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);"></td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(247, 247, =
+248);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">Will the organization have =
+employees?:</td><td class=3D"fs-submission-table--value" style=3D"margin: =
+0px; padding: 12px 19px; -webkit-font-smoothing: antialiased; color: =
+rgb(21, 35, 43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">When does the organization intend to =
+have employees?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Will the =
+organization rent a facility?:</td><td =
+class=3D"fs-submission-table--value" style=3D"margin: 0px; padding: 12px =
+19px; -webkit-font-smoothing: antialiased; color: rgb(21, 35, =
+43);">No</td></tr><tr style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased; background: rgb(207, 212, =
+216);"><td class=3D"fs-submission-table--label" style=3D"margin: 0px; =
+padding: 12px 19px; -webkit-font-smoothing: antialiased; font-weight: =
+700; color: rgb(108, 122, 133);">When does the organization intend to =
+rent a facility?:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Estimated =
+Monthly Rent:</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(207, 212, 216);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Estimated =
+Monthly Overhead (Phone, Utilities, Permits, Licencing, Website, Office =
+Expenses, Travel):</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);">6630</td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased; background: =
+rgb(247, 247, 248);"><td class=3D"fs-submission-table--label" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; font-weight: 700; color: rgb(108, 122, 133);">Do you have =
+any questions? :</td><td class=3D"fs-submission-table--value" =
+style=3D"margin: 0px; padding: 12px 19px; -webkit-font-smoothing: =
+antialiased; color: rgb(21, 35, 43);"></td></tr></tbody></table></div><p =
+class=3D"last" style=3D"margin: 0px; padding: 19px 31px 12px; =
+font-weight: 400; font-size: 16px; line-height: 21px; =
+-webkit-font-smoothing: antialiased;"></p></td></tr><tr style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased;"><td =
+style=3D"margin: 0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"></td></tr></tbody></table></div></td><td style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: =
+antialiased;"></td></tr></tbody></table><table class=3D"footer-wrap" =
+style=3D"margin: 0px; padding: 0px; border-collapse: collapse; =
+-webkit-font-smoothing: antialiased; width: 1043px; clear: both; =
+caret-color: rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; =
+font-style: normal; font-variant-caps: normal; font-weight: 400; =
+letter-spacing: normal; orphans: 2; text-align: start; text-transform: =
+none; white-space: normal; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 248); =
+text-decoration-line: none; text-decoration-thickness: auto; =
+text-decoration-style: solid;"><tbody style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"><tr style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased;"><td style=3D"margin: =
+0px; padding: 0px; -webkit-font-smoothing: antialiased;"></td><td =
+class=3D"container" style=3D"margin: 0px auto 31px; padding: 0px; =
+-webkit-font-smoothing: antialiased; display: block; max-width: 700px; =
+clear: both;"><div class=3D"content" style=3D"margin: 0px auto 51px; =
+padding: 0px 19px; -webkit-font-smoothing: antialiased; display: block; =
+max-width: 700px;"><table style=3D"margin: 0px; padding: 0px; =
+border-collapse: collapse; -webkit-font-smoothing: antialiased; width: =
+662px;"><tbody style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><tr style=3D"margin: 0px; padding: =
+0px; -webkit-font-smoothing: antialiased;"><td align=3D"center" =
+class=3D"legal" style=3D"margin: 0px; padding: 0px; =
+-webkit-font-smoothing: antialiased;"><p style=3D"margin: 0px 0px 5px; =
+padding: 0px; font-weight: 400; font-size: 12px; line-height: 16px; =
+-webkit-font-smoothing: antialiased; text-align: center; color: rgb(69, =
+85, 96);"><img =
+src=3D"https://nonprofitadvisor.formstack.com/admin/themes/default/images/=
+Intellistack_formerly_FS.png" alt=3D"Intellistack formerly Formstack" =
+width=3D"200" height=3D"auto" style=3D"margin: 0px 0px 10px; padding: =
+0px; -webkit-font-smoothing: antialiased; max-width: 100%;"></p><p =
+style=3D"margin: 0px 0px 5px; padding: 0px; font-weight: 400; font-size: =
+12px; line-height: 16px; -webkit-font-smoothing: antialiased; =
+text-align: center; color: rgb(69, 85, 96);">=C2=A9 2026 Intellistack =
+(formerly Formstack). All rights reserved.<br style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: antialiased;">This is a customer =
+service email.</p><p style=3D"margin: 0px 0px 5px; padding: 0px; =
+font-weight: 400; font-size: 12px; line-height: 16px; =
+-webkit-font-smoothing: antialiased; text-align: center; color: rgb(69, =
+85, 96);">Intellistack, 50 South Steele Street, Suite 500, Denver, CO =
+80209</p></td></tr></tbody></table></div></td><td style=3D"margin: 0px; =
+padding: 0px; -webkit-font-smoothing: =
+antialiased;"></td></tr></tbody></table><img =
+src=3D"http://mailtrack.formstack.com/wf/open?upn=3Du001.xKhs38IOIRFzGk9Lw=
+cY-2Bwl202Oz3UEImImUJQ2sm5xfrulBguLXGHYPvFWDiiRdfHF4uSYnArdLS2zaYwKBED1bIW=
+lAWyQCWRml8yj7b5j0PfwxrCaLw0eeJOZBD4Y16Cv5kJqMDSgk7kMiOf083w7J0ZS8dVQOpgmt=
+o8NSRXBYbr5cZNIG2dyak-2BqI7ezbbzn-2B-2FLKH1qm91N6Pzu05Io6ostA2IyYDxFw87Dn-=
+2FU-2BwnRDy-2BHH-2BDvfl07au-2FKXZsYIw-2FGY2-2Fp7ChWxGT79u-2BZhIksE1FRX0IyJ=
+L-2FusG9rLwkDEDO0Ggnzs7-2B1pL3QmX4DQTOQvxQ4gs449DR3NNJ8DYKgvzuLzr2i7Ml1L9R=
+A1kNYUmS0zXZQzWxUdLC7V8PqELrQG5mCz8RDtKvJ602iycmdaDjfLPXlm7Bd-2FKu93vS2KkE=
+WN9u6k-2F5VQDAtiRvpsQQx2nXBAkgLkMjzOC25Cn9zyDvfxjyJ9g5EGRnnQ2HbNKHAaQDmBpb=
+qnhbOnvwmaJrlpIzGQM3WcdpQkCioOX4mrG32G6rdQRPrw6NZZYJkiLnZLD6CY-2FKPLkqVKYh=
+rIKXVaIs-2FNrWoMN7y2OuyyXw8HH2-2FXBGw-2FmWsYl6Wh7c-3D" alt=3D"" =
+width=3D"1" height=3D"1" border=3D"0" style=3D"-webkit-font-smoothing: =
+antialiased; max-width: 100%; caret-color: rgb(0, 0, 0); font-family: =
+Helvetica; font-size: 14px; font-style: normal; font-variant-caps: =
+normal; font-weight: 400; letter-spacing: normal; orphans: 2; =
+text-align: start; text-indent: 0px; text-transform: none; white-space: =
+normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+background-color: rgb(247, 247, 248); text-decoration-line: none; =
+text-decoration-thickness: auto; text-decoration-style: solid; margin: =
+0px !important; padding: 0px !important; height: 1px !important; width: =
+1px !important; border-width: 0px !important;"><span style=3D"caret-color:=
+ rgb(0, 0, 0); font-family: Helvetica; font-size: 14px; font-style: =
+normal; font-variant-caps: normal; font-weight: 400; letter-spacing: =
+normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: =
+none; white-space: normal; widows: 2; word-spacing: 0px; =
+-webkit-text-stroke-width: 0px; background-color: rgb(247, 247, 248); =
+text-decoration: none; float: none; display: inline =
+!important;"></span></div></blockquote></div><br></body></html>=
+
+--Apple-Mail=_75FE41E4-19A5-4E24-9DB9-C530E8FA5256--
