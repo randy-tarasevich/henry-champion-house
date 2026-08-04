@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// TODO before launch: replace with the Trust's chosen donation processor link
+// (e.g. Givebutter, Stripe, PayPal Giving) once Charles selects and sets one up.
+const donationLink = "#";
+const processorName = "[Processor Name]";
+---
+
+<Layout
+  title="Donate"
+  description="Support the restoration of the General Henry Champion House, a 1790 National Register landmark in Colchester, Connecticut."
+>
+  <!-- Hero -->
+  <section class="mx-auto max-w-3xl px-6 pt-20 pb-10 text-center">
+    <h1 class="text-4xl md:text-5xl">Support the Restoration</h1>
+    <p class="mx-auto mt-4 max-w-xl text-lg text-[var(--color-charcoal)]">
+      Help preserve a 1790 National Register landmark for future generations.
+    </p>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 pb-16">
+    <!-- Mission -->
+    <section>
+      <p class="eyebrow">Our Mission</p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        The General Henry Champion Trust, Inc. is organized and operated exclusively for charitable,
+        educational, and historical purposes. The Trust is dedicated to the preservation, restoration, and
+        protection of the 1790 General Henry Champion House in Colchester, Connecticut &mdash; an
+        architecturally significant, Federal-period structure listed on the State and National Registers of
+        Historic Places.
+      </p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Our purpose is to restore the house and its historic landscape as closely as possible to their
+        documented original appearance, including architectural elements noted in the National Register
+        nomination such as the gambrel roof, Ionic-columned entry portico, triangular-pedimented dormers,
+        twelve-over-twelve sash windows, and the historic stone wall and setting.
+      </p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        The Trust conducts historical research, architectural conservation, preservation planning, and
+        public education activities that interpret the life and legacy of General Henry Champion, a
+        Revolutionary War officer. All of this work is carried out to preserve a nationally significant
+        landmark, expand public understanding of Connecticut's architectural and Revolutionary-era history,
+        and ensure the property remains a cultural, educational, and historical resource for generations to
+        come.
+      </p>
+    </section>
+
+    <!-- Current priority -->
+    <section class="mt-14 rounded-sm border border-[var(--color-stone)] bg-[var(--color-parchment)] px-8 py-8">
+      <h2 class="text-2xl">Right Now: The Roof</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Restoration work is currently focused on the roof &mdash; the most urgent need to protect the house
+        from further damage. Your gift today goes toward this first, critical phase of the project.
+      </p>
+    </section>
+
+    <!-- Tax deductibility -->
+    <section class="mt-14">
+      <h2 class="text-2xl">Give with Confidence</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        The General Henry Champion Trust, Inc. is a 501(c)(3) public charity. Contributions are
+        tax-deductible to the extent allowed by law.
+      </p>
+      <p class="mt-2 text-sm text-[var(--color-charcoal)]">EIN: 41-5346804</p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-14 text-center">
+      <h2 class="text-2xl">Make a Gift</h2>
+      <a href={donationLink} class="btn-primary mt-6">Donate via {processorName}</a>
+    </section>
+
+    <!-- Footer note -->
+    <section class="mt-14 border-t border-[var(--color-stone)] pt-8 text-sm text-[var(--color-charcoal)]">
+      <p>
+        Gifts may also be mailed to: General Henry Champion Trust, Inc., 526 Westchester Rd, Colchester, CT
+        06415.
+      </p>
+    </section>
+  </article>
+</Layout>

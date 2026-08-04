@@ -1,0 +1,103 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home">
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/home-front-summer.jpg"
+      alt="Front elevation of the General Henry Champion House in summer, with patriotic bunting, a cannon, and the barn visible"
+      class="h-[70vh] w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="mx-auto w-full max-w-6xl px-6 pb-16 text-white">
+        <p class="eyebrow text-white/90">Colchester, Connecticut &middot; Est. 1790</p>
+        <h1 class="mt-3 max-w-2xl text-4xl md:text-5xl">The General Henry Champion House</h1>
+        <p class="mt-4 max-w-xl text-lg text-white/90">
+          A Revolutionary-era landmark, under restoration, and open to your support.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-6">
+          <a href="/donate" class="btn-primary">Support the Restoration</a>
+          <a href="/history" class="text-sm text-white underline decoration-[var(--color-brick)] underline-offset-4 hover:text-[var(--color-stone)]">
+            Read the House's History &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="mx-auto max-w-3xl px-6 py-20 text-center">
+    <p class="eyebrow">Our Mission</p>
+    <p class="mt-4 text-xl leading-relaxed text-[var(--color-ink)]">
+      The General Henry Champion Trust is dedicated to preserving, restoring, and protecting the 1790
+      General Henry Champion House &mdash; an architecturally significant Federal-period home listed on
+      the State and National Registers of Historic Places. Our work restores the house and its historic
+      landscape to their documented original appearance, while sharing the story of the Champion family
+      and Connecticut's Revolutionary-era history with the public.
+    </p>
+    <a href="/donate" class="btn-secondary mt-6 inline-block">Read our full mission &rarr;</a>
+  </section>
+
+  <!-- Restoration callout -->
+  <section class="bg-[var(--color-parchment)]">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2">
+      <img
+        src="/images/restoration-roof-aerial-2025.png"
+        alt="Aerial view of the house's roof mid-repair"
+        class="h-80 w-full rounded-sm object-cover shadow-sm"
+      />
+      <div>
+        <h2 class="text-2xl">A House in the Making, Again</h2>
+        <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+          The Champion House sat vacant and deteriorating for years before the Trust acquired it. Today,
+          restoration is underway &mdash; starting with the roof &mdash; to bring the house back to the
+          condition it deserves. Follow along as the work progresses.
+        </p>
+        <a href="/restoration" class="btn-primary mt-6">See Restoration Progress &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick links -->
+  <section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="grid gap-10 md:grid-cols-3">
+      <a href="/history" class="group block">
+        <h3 class="text-xl group-hover:text-[var(--color-brick)]">History</h3>
+        <p class="mt-3 text-sm leading-relaxed text-[var(--color-charcoal)]">
+          Two Champions, a Revolutionary War, and a house built to last. Learn the story behind the name.
+        </p>
+        <span class="btn-secondary mt-4 inline-block text-sm">Read More</span>
+      </a>
+      <a href="/restoration" class="group block">
+        <h3 class="text-xl group-hover:text-[var(--color-brick)]">Restoration Progress</h3>
+        <p class="mt-3 text-sm leading-relaxed text-[var(--color-charcoal)]">
+          Before, during, and after &mdash; an honest record of the work as it happens.
+        </p>
+        <span class="btn-secondary mt-4 inline-block text-sm">See Progress</span>
+      </a>
+      <a href="/visit" class="group block">
+        <h3 class="text-xl group-hover:text-[var(--color-brick)]">Visit / Contact</h3>
+        <p class="mt-3 text-sm leading-relaxed text-[var(--color-charcoal)]">
+          Have a question, a document, or an old photograph of the house? We'd love to hear from you.
+        </p>
+        <span class="btn-secondary mt-4 inline-block text-sm">Get in Touch</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Donation banner -->
+  <section class="bg-[var(--color-ink)] text-[var(--color-cream)]">
+    <div class="mx-auto max-w-3xl px-6 py-16 text-center">
+      <h2 class="text-2xl">Help Us Bring the House Back</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-relaxed text-white/80">
+        Every gift goes directly toward preserving a piece of Connecticut's Revolutionary-era history for
+        future generations. The General Henry Champion Trust is a 501(c)(3) nonprofit organization; your
+        donation is tax-deductible.
+      </p>
+      <a href="/donate" class="btn-primary mt-8">Donate Now</a>
+    </div>
+  </section>
+</Layout>
