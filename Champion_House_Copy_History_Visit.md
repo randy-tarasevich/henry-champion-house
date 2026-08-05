@@ -12,7 +12,7 @@ Ready to drop into the Astro build. Voice matches the Home/Donate draft: warm bu
 Colchester, Connecticut · Built 1790
 
 **Headline:**
-A House Built for a General
+A Colonel's House, a General's Home
 
 **Subhead:**
 Two Champions, a Revolutionary War, and 230 years of history on Westchester Road.
@@ -21,11 +21,11 @@ Two Champions, a Revolutionary War, and 230 years of history on Westchester Road
 
 ---
 
-### Built by a Father, for a Son
+### Built by a Colonel, for His Bride
 
 **Body copy:**
 
-> The house was built in 1790 by Colonel Henry Champion, a Revolutionary War officer, for his son, General Henry Champion — likely timed to the General's marriage to Abigail Tinker that same year. It was designed by William Spratt, the same house joiner who designed the Epaphroditus Champion House in East Haddam and the Deming House in Litchfield. General Champion lived here until his death in 1836.
+> The house was built in 1790 by Colonel Henry Champion, a Revolutionary War officer, following his 1789 marriage to Deborah Brainard, a Colchester woman. It was designed by William Spratt, the same house joiner who designed the Epaphroditus Champion House in East Haddam and the Deming House in Litchfield. Colonel Champion lived here until his death in 1797, after which the house passed to his son, General Henry Champion, who lived here until his own death in 1836 — the long tenure that gives the house the name it carries today.
 
 ---
 
@@ -33,7 +33,11 @@ Two Champions, a Revolutionary War, and 230 years of history on Westchester Road
 
 **Body copy:**
 
-> Colonel Henry Champion (1723–1797) served as Commissary General for the Eastern Department during the Revolutionary War, responsible for keeping Washington's army fed. His best-known act came in the brutal winter of 1777–78: working with his son Epaphroditus, he personally drove a herd of cattle 300 miles to reach the starving Continental Army at Valley Forge — a supply effort that involved direct coordination with both General Washington and Connecticut Governor Trumbull.
+> Colonel Henry Champion (1723–1797) was born in East Haddam, the grandson of an original settler of Saybrook. He entered the colonial militia in 1741, reached the rank of Lieutenant by 1750, and served in the French and Indian War before the Revolution began. In 1775, the Connecticut General Assembly selected him as a Commissary for the war effort, tasked with procuring goods and supplying the Continental Army — work that put him in close, regular contact with General Washington and Connecticut Governor Jonathan Trumbull. By 1778, he was appointed sole Commissary General for the Eastern Department.
+>
+> His best-known act came in the brutal winter of 1777–78: working with his son Epaphroditus, he personally drove a herd of cattle 300 miles to reach the starving Continental Army at Valley Forge, purchased at great expense and eaten by the troops within five days of arrival.
+>
+> Family tradition holds that his daughter, Deborah Champion, once carried dispatches on horseback from New London to General Washington in Boston — passing safely through British lines, the story goes, because she was a woman.
 
 ---
 
@@ -44,6 +48,8 @@ Two Champions, a Revolutionary War, and 230 years of history on Westchester Road
 > General Henry Champion (1751–1836) was born and died in this part of Colchester, then known as Westchester. He answered the Lexington Alarm in 1775 and fought at Bunker Hill. In 1779, as acting major of the First Battalion, Light Brigade, he served under Washington's direct command at the capture of Stony Point — a moment he marked every year afterward, hosting a "Stony Point Day" celebration at this house each July 15 for the rest of his life.
 >
 > After the war, he remained active in public life: a deputy to the Connecticut General Assembly, an Assistant to the Governor, a judge on the state's Supreme Court of Errors, and a deacon of the Westchester church. He was also a major investor in the Connecticut Land Company — the towns of Champion, New York and Champion, Ohio are named for him, and his portrait at the Wadsworth Atheneum shows him with a map of the Western Reserve lands he helped settle.
+>
+> He is buried in Westchester Cemetery on Cemetery Road in Colchester, his grave marked by a classical white marble obelisk.
 
 ---
 
@@ -137,5 +143,7 @@ The house is privately owned and under active restoration — here's how to reac
 1. ~~Col. vs. Gen. Henry Champion~~ — resolved: house belonged to Gen. Henry Champion.
 2. ~~Visit policy~~ — resolved: no public visiting at this stage, house under active renovation.
 3. ~~Badge treatment for National Register + W3R Trail~~ — resolved 2026-08-03: no badges, plain text.
-4. Confirm whether direct email/phone should appear on the Visit/Contact page alongside the form, or form-only.
-5. Once new roof photos come in, consider whether any belong on the History page (architectural "as restored" update) in addition to Restoration Progress.
+4. ~~Who the house was built for~~ — resolved 2026-08-05: per the Colchester Historical Society's Col. Henry Champion exhibit PDF (Charles-provided, `col-henry-champiobn.pdf`), the house was built by Colonel Champion for himself and his 1789 bride, Deborah Brainard — not for General Champion's marriage to Abigail Tinker as previously drafted. Headline, hero copy, and the "Built by..." section updated accordingly on 2026-08-05.
+5. Confirm whether direct email/phone should appear on the Visit/Contact page alongside the form, or form-only.
+6. Once new roof photos come in, consider whether any belong on the History page (architectural "as restored" update) in addition to Restoration Progress.
+7. New from the 2026-08-05 PDF: added Colonel Champion's lineage/militia/French & Indian War background, his 1775 Commissary appointment, the Deborah Champion dispatch-ride tradition, and General Champion's grave/obelisk location. Consider whether Charles wants the Deborah Champion story to get its own callout/sidebar given how vivid it is — currently folded into the Colonel's section as a paragraph.
