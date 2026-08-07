@@ -1,0 +1,143 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const houseAndGrounds = [
+  { src: "/images/gallery/front-elevation-before-restoration.webp", alt: "The front elevation before restoration began, with weathered clapboards and peeling paint on the entry portico", caption: "The front elevation before restoration began — weathered clapboards and peeling paint, still every inch the 1790 Federal farmhouse." },
+  { src: "/images/gallery/boarded-window-before-restoration.webp", alt: "A side entrance to the sunroom, boarded over, with the roofline balustrade visible above", caption: "A side entrance to the sunroom, boarded against the weather while repairs were pending." },
+  { src: "/images/gallery/sunroom-addition-balustrade.webp", alt: "The one-story sunroom addition on the south side, with its rooftop balustrade intact above a wall of windows", caption: "The sunroom addition on the south side, its rooftop balustrade still intact above a wall of twelve-pane windows." },
+  { src: "/images/gallery/the-barn.webp", alt: "The barn, with its cupola and three garage bays, on a clear winter day", caption: "The barn, with its cupola and three garage bays, before its own roof was replaced." },
+  { src: "/images/gallery/aerial-house-and-barn.webp", alt: "Aerial view of the house, the empty pool, and the barn together on the property", caption: "An aerial view taking in the house, the pool, and the barn together on the property." },
+  { src: "/images/gallery/cannonball-entrance.webp", alt: "A cannonball mounted on a stone pier at the property entrance", caption: "One of a pair of cannonballs marking the entrance off Westchester Road." },
+  { src: "/images/gallery/wrought-iron-gates.webp", alt: "Wrought-iron gates set into the historic stone wall along the road, with cannonball finials on the piers", caption: "The wrought-iron gates set into the historic stone wall along the road, cannonball finials on both piers." },
+  { src: "/images/gallery/empty-pool.webp", alt: "The in-ground pool, drained and filled with fallen leaves", caption: "The in-ground pool, drained and filled with leaves, at the time of acquisition." },
+  { src: "/images/gallery/boarded-bulkhead-entrance.webp", alt: "A cellar bulkhead entrance, boarded over, set between two stone foundation piers", caption: "A cellar bulkhead entrance, boarded over between the stone foundation piers." },
+  { src: "/images/gallery/foundation-utility-detail.webp", alt: "Old standpipes at the foundation, remnants of earlier building systems", caption: "Old standpipes at the foundation — remnants of systems still to be assessed as restoration continues." },
+];
+
+const inside = [
+  { src: "/images/gallery/sunroom-light-and-shadow.webp", alt: "Afternoon light through the sunroom's windows, falling across the hardwood floor and wicker furniture", caption: "Afternoon light through the sunroom's twelve-pane windows, still furnished with wicker chairs from the house's last occupants." },
+  { src: "/images/gallery/green-door-vintage-hardware.webp", alt: "A weathered green door with a set of vintage brass doorknobs and a deadbolt", caption: "Layers of paint and a set of vintage brass doorknobs on an interior door." },
+  { src: "/images/gallery/brass-door-hardware-detail.webp", alt: "A brass keypad deadbolt and lever handle on an exterior door", caption: "Newer hardware on an exterior door — a keypad deadbolt paired with a brass lever." },
+  { src: "/images/gallery/paneled-door-floral-wallpaper.webp", alt: "Folding interior shutters in a room papered with a bold floral print", caption: "Folding interior shutters against a room papered in a bold floral print." },
+  { src: "/images/gallery/six-panel-door-striped-wallpaper.webp", alt: "A white six-panel door with its original strap hinges, in a room papered with stripes", caption: "A six-panel door with its original strap hinges, in a room papered in stripes." },
+  { src: "/images/gallery/crown-molding-detail.webp", alt: "Water staining at a ceiling corner above ornate crown molding and floral wallpaper", caption: "Water staining at a ceiling corner — one of many repairs still ahead." },
+  { src: "/images/gallery/sloped-ceiling-water-damage.webp", alt: "A low, sloped-ceiling room under the eaves, showing water damage and wood paneling", caption: "A low, sloped-ceiling room under the eaves, showing years of water damage." },
+  { src: "/images/gallery/antique-china-cabinet.webp", alt: "An antique china cabinet left behind, still holding glassware and dishes, against floral wallpaper", caption: "A china cabinet left behind, still holding glassware and dishes." },
+  { src: "/images/gallery/dining-room-table-chairs.webp", alt: "A dining room with table and chairs still set, a china cabinet visible in the background", caption: "The dining room, table and chairs still set as if guests were expected." },
+  { src: "/images/gallery/salvaged-furniture-legs.webp", alt: "Turned wooden bedposts and table legs, salvaged and set aside during the house's clean-out", caption: "Turned bedposts and table legs, salvaged and set aside during the house's clean-out." },
+];
+
+const history = [
+  { src: "/images/gallery/national-register-plaque.webp", alt: "The enamel National Register of Historic Places marker", caption: "The National Register of Historic Places marker, on the property since 1972." },
+  { src: "/images/gallery/national-register-certificate-framed.webp", alt: "The framed Connecticut Historical Commission certificate admitting the house to the National Register in 1972", caption: "The Connecticut Historical Commission's certificate, admitting the Henry Champion House to the National Register on October 10, 1972." },
+  { src: "/images/gallery/country-life-1908-article.webp", alt: "A framed 1908 Country Life in America magazine article about the house's dining room and bedrooms", caption: "“Country Life in America,” April 1908 — a feature on the house's dining room and bedrooms, found framed inside." },
+  { src: "/images/gallery/westchester-country-home-article.webp", alt: "A framed early magazine article on the house at Westchester Centre, with archival photographs of its original rooms", caption: "“One Way of Securing a Country Home,” an early feature on the house at Westchester Centre, with photographs of its original rooms." },
+];
+---
+
+<Layout
+  title="Gallery"
+  description="A photo gallery of the General Henry Champion House — the grounds, architectural details, glimpses inside, and the documented history behind a 1790 Colchester landmark."
+>
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/home-front-summer.webp"
+      alt="The General Henry Champion House today, front elevation with bunting and cannon on the lawn"
+      class="h-[45vh] w-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="mx-auto w-full max-w-6xl px-6 pb-12 text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+        <h1 class="text-4xl md:text-5xl">Gallery</h1>
+        <p class="mt-4 max-w-xl text-lg text-white/90">
+          The house, the grounds, and the history behind them &mdash; in photographs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-6xl px-6 py-16">
+    <p class="mx-auto max-w-3xl leading-relaxed text-[var(--color-charcoal)]">
+      Most of what follows was taken before restoration work began &mdash; the house as the Trust found
+      it, inside and out, along with the documentation that ties it to its history. It's a fuller picture
+      than fits on the other pages, and a record worth keeping as the work continues.
+    </p>
+
+    <!-- The House & Grounds -->
+    <section class="mt-14">
+      <h2 class="text-2xl">The House &amp; Grounds</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {houseAndGrounds.map((photo) => (
+          <figure>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+              data-lightbox
+              loading="lazy"
+            />
+            <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- Inside -->
+    <section class="mt-16">
+      <h2 class="text-2xl">A Glimpse Inside</h2>
+      <p class="mt-4 max-w-3xl leading-relaxed text-[var(--color-charcoal)]">
+        The house came with decades of its last occupants still in it &mdash; furniture, wallpaper,
+        hardware, and the kind of wear that only shows up once you're standing inside. These are a few of
+        those rooms, largely untouched.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {inside.map((photo) => (
+          <figure>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+              data-lightbox
+              loading="lazy"
+            />
+            <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- Documented History -->
+    <section class="mt-16">
+      <h2 class="text-2xl">Documented History</h2>
+      <p class="mt-4 max-w-3xl leading-relaxed text-[var(--color-charcoal)]">
+        Framed and hanging inside the house: its own paper trail, from the 1972 National Register listing
+        back to magazine features published while General Champion's descendants still lived there.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        {history.map((photo) => (
+          <figure>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-96 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+              data-lightbox
+              loading="lazy"
+            />
+            <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-8 py-10 text-center">
+      <h2 class="text-2xl">Follow the Restoration</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-relaxed text-[var(--color-charcoal)]">
+        For a closer look at the work already underway &mdash; the roofs, the origin story, and what's
+        ahead &mdash; visit the Restoration Progress page.
+      </p>
+      <a href="/restoration" class="btn-primary mt-6 shadow-lg shadow-black/50 ring-1 ring-white/15">See the Restoration</a>
+    </section>
+  </article>
+</Layout>

@@ -3,6 +3,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/history", label: "History" },
   { href: "/restoration", label: "Restoration Progress" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/visit", label: "Visit / Contact" },
 ];
 const currentPath = Astro.url.pathname;
@@ -29,15 +30,36 @@ const currentPath = Astro.url.pathname;
       ))}
     </nav>
 
-    <a href="/donate" class="btn-primary text-sm shadow-lg shadow-black/50 ring-1 ring-white/15">Donate</a>
+    <div class="flex items-center gap-3">
+      <a href="/donate" class="btn-primary text-sm shadow-lg shadow-black/50 ring-1 ring-white/15">Donate</a>
+
+      <button
+        id="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-[var(--color-stone)] text-[var(--color-ink)] md:hidden"
+      >
+        <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+        <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
   </div>
 
-  <nav class="flex flex-wrap gap-4 border-t border-[var(--color-stone)] px-6 py-2 text-xs md:hidden">
+  <nav
+    id="mobile-menu"
+    class="hidden flex-col border-t border-[var(--color-stone)] px-6 py-2 md:hidden"
+  >
     {navLinks.map((link) => (
       <a
         href={link.href}
         class:list={[
-          "tracking-wide",
+          "border-b border-[var(--color-stone)] py-3 text-sm tracking-wide last:border-none",
           currentPath === link.href ? "text-[var(--color-brick)]" : "text-[var(--color-charcoal)]",
         ]}
       >
@@ -46,3 +68,20 @@ const currentPath = Astro.url.pathname;
     ))}
   </nav>
 </header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.contains("flex");
+    menu?.classList.toggle("hidden");
+    menu?.classList.toggle("flex");
+    iconOpen?.classList.toggle("hidden");
+    iconClose?.classList.toggle("hidden");
+    toggle?.setAttribute("aria-expanded", String(!isOpen));
+    toggle?.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  });
+</script>
