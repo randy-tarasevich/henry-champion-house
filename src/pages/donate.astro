@@ -1,10 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-// TODO before launch: replace with the Trust's chosen donation processor link
-// (e.g. Givebutter, Stripe, PayPal Giving) once Charles selects and sets one up.
-const donationLink = "#";
-const processorName = "[Processor Name]";
+const donationLink = "https://givebutter.com/untitled-campaign-cvc7ij";
 ---
 
 <Layout
@@ -68,7 +65,13 @@ const processorName = "[Processor Name]";
     <!-- CTA -->
     <section class="mt-14 text-center">
       <h2 class="text-2xl">Make a Gift</h2>
-      <a href={donationLink} class="btn-primary mt-6 shadow-lg shadow-black/50 ring-1 ring-white/15">Donate (Coming Soon)</a>
+      <a
+        href={donationLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary mt-6 shadow-lg shadow-black/50 ring-1 ring-white/15"
+        >Donate Now</a
+      >
     </section>
 
     <!-- Footer note -->
