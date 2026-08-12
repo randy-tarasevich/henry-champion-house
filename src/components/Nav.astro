@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
   <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
     <a href="/" class="text-lg tracking-wide text-[var(--color-ink)]">
       <span class="block text-xl">The General Henry Champion House</span>
-      <span class="mt-1 block text-sm eyebrow text-[var(--color-brick)]">Colchester, Connecticut &middot; Est. 1790</span>
+      <span class="mt-1 block text-sm eyebrow text-[var(--color-brick)]">Colchester, Connecticut <span class="block lg:inline">&middot; Est. 1790 &middot;</span></span>
     </a>
 
     <nav class="hidden items-center gap-6 md:flex">
@@ -31,7 +31,10 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <div class="flex items-center gap-3">
-      <a href="/donate" class="btn-primary text-sm shadow-lg shadow-black/50 ring-1 ring-white/15">Donate (Coming Soon)</a>
+      <a href="/donate" class="btn-primary text-sm shadow-lg shadow-black/50 ring-1 ring-white/15 whitespace-nowrap">
+        <span class="sm:hidden">Donate</span>
+        <span class="hidden sm:inline">Donate (Coming Soon)</span>
+      </a>
 
       <button
         id="menu-toggle"
