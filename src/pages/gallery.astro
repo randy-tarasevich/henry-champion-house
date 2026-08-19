@@ -12,6 +12,14 @@ const houseAndGrounds = [
   { src: "/images/gallery/empty-pool.webp", alt: "The in-ground pool, drained and filled with fallen leaves", caption: "The in-ground pool, drained and filled with leaves, at the time of acquisition." },
   { src: "/images/gallery/boarded-bulkhead-entrance.webp", alt: "A cellar bulkhead entrance, boarded over, set between two stone foundation piers", caption: "A cellar bulkhead entrance, boarded over between the stone foundation piers." },
   { src: "/images/gallery/foundation-utility-detail.webp", alt: "Old standpipes at the foundation, remnants of earlier building systems", caption: "Old standpipes at the foundation — remnants of systems still to be assessed as restoration continues." },
+  { src: "/images/gallery/portico-with-columns.webp", alt: "The front portico with its fluted Ionic columns and pediment, framing the entry door", caption: "The front portico, with its fluted Ionic columns and dentiled pediment framing the entry." },
+  { src: "/images/gallery/ionic-capital-detail.webp", alt: "A close-up of one of the portico's carved Ionic column capitals, with scroll volutes and a central rosette", caption: "A closer look at one of the portico's carved Ionic capitals." },
+  { src: "/images/gallery/green-door-with-wreath.webp", alt: "The house's weathered green entry door, with an antique floral wreath hanging on the knocker", caption: "The green entry door, with an antique floral wreath still hanging on the knocker." },
+  { src: "/images/gallery/house-front-spring-flag.webp", alt: "The house in spring, with a flowering tree on the lawn and a flag on the porch", caption: "The house in spring, a flowering tree in bloom on the front lawn." },
+  { src: "/images/gallery/house-side-spring-blossom.webp", alt: "The house's gambrel end and twin chimneys in spring, seen past a flowering dogwood", caption: "The gambrel end and twin chimneys, seen past a flowering dogwood in spring." },
+  { src: "/images/gallery/house-front-summer-overgrown.webp", alt: "The front of the house in summer, full leaf cover overhead and the lawn grown tall", caption: "The front of the house in summer, the lawn grown tall while restoration was pending." },
+  { src: "/images/gallery/house-front-winter.webp", alt: "The full front of the house in winter, bare trees and low afternoon light", caption: "The house in winter light, bare trees showing the full run of the roofline." },
+  { src: "/images/gallery/gambrel-dormer-chimneys-winter.webp", alt: "A low winter view of the gambrel roof and its two brick chimneys against a blue sky", caption: "The gambrel roof and its two brick chimneys, seen from below on a clear winter day." },
 ];
 
 const inside = [
@@ -25,6 +33,7 @@ const inside = [
   { src: "/images/gallery/antique-china-cabinet.webp", alt: "An antique china cabinet left behind, still holding glassware and dishes, against floral wallpaper", caption: "A china cabinet left behind, still holding glassware and dishes." },
   { src: "/images/gallery/dining-room-table-chairs.webp", alt: "A dining room with table and chairs still set, a china cabinet visible in the background", caption: "The dining room, table and chairs still set as if guests were expected." },
   { src: "/images/gallery/salvaged-furniture-legs.webp", alt: "Turned wooden bedposts and table legs, salvaged and set aside during the house's clean-out", caption: "Turned bedposts and table legs, salvaged and set aside during the house's clean-out." },
+  { src: "/images/gallery/hallway-floral-striped-wallpaper.webp", alt: "A central hallway with wide-plank wood floors, striped and floral wallpaper, and rooms opening on either side", caption: "The central hallway, its wide-plank floors and period wallpaper opening onto rooms on either side." },
 ];
 
 const history = [
@@ -32,6 +41,13 @@ const history = [
   { src: "/images/gallery/national-register-certificate-framed.webp", alt: "The framed Connecticut Historical Commission certificate admitting the house to the National Register in 1972", caption: "The Connecticut Historical Commission's certificate, admitting the Henry Champion House to the National Register on October 10, 1972." },
   { src: "/images/gallery/country-life-1908-article.webp", alt: "A framed 1908 Country Life in America magazine article about the house's dining room and bedrooms", caption: "“Country Life in America,” April 1908 — a feature on the house's dining room and bedrooms, found framed inside." },
   { src: "/images/gallery/westchester-country-home-article.webp", alt: "A framed early magazine article on the house at Westchester Centre, with archival photographs of its original rooms", caption: "“One Way of Securing a Country Home,” an early feature on the house at Westchester Centre, with photographs of its original rooms." },
+  { src: "/images/gallery/archival-photo-front-topiary.webp", alt: "An archival black-and-white photograph of the house's front elevation, with clipped topiary shrubs on the lawn, labeled \"the copse\"", caption: "An archival photograph of the front elevation, hand-labeled “the copse,” from earlier in the house's history." },
+];
+
+const gravesite = [
+  { src: "/images/gallery/champion-family-tomb.webp", alt: "A stone tomb inscribed CHAMPION, enclosed by a wrought-iron fence at Westchester Cemetery", caption: "The Champion family tomb at Westchester Cemetery, on Cemetery Road in Colchester." },
+  { src: "/images/gallery/champion-tomb-obelisk.webp", alt: "A weathered stone obelisk with an urn finial standing beside the Champion family tomb in Westchester Cemetery", caption: "An obelisk marker beside the Champion tomb, among the older stones at Westchester Cemetery." },
+  { src: "/images/gallery/champion-gravesite-cemetery.webp", alt: "A wider view of the Champion family tomb among autumn foliage at Westchester Cemetery", caption: "The gravesite in autumn, set within the wrought-iron enclosure at Westchester Cemetery." },
 ];
 ---
 
@@ -121,6 +137,29 @@ const history = [
               src={photo.src}
               alt={photo.alt}
               class="h-96 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+              data-lightbox
+              loading="lazy"
+            />
+            <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <!-- General Champion's Grave -->
+    <section class="mt-16">
+      <h2 class="text-2xl">General Champion's Grave</h2>
+      <p class="mt-4 max-w-3xl leading-relaxed text-[var(--color-charcoal)]">
+        General Henry Champion is buried at Westchester Cemetery on Cemetery Road, not far from the
+        house he called home.
+      </p>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {gravesite.map((photo) => (
+          <figure>
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
               data-lightbox
               loading="lazy"
             />
