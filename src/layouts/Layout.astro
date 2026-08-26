@@ -19,6 +19,53 @@ const {
 const pageTitle = `${title} · The General Henry Champion House`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(image, Astro.site);
+
+// Local SEO / Google Business Profile alignment: structured data for the
+// nonprofit trust and the historic property it's restoring.
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "NGO",
+      "@id": "https://henrychampionhouse.org/#organization",
+      name: "General Henry Champion Trust, Inc.",
+      url: "https://henrychampionhouse.org",
+      telephone: "+1-860-603-0603",
+      taxID: "41-5346804",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "526 Westchester Rd",
+        addressLocality: "Colchester",
+        addressRegion: "CT",
+        postalCode: "06415",
+        addressCountry: "US",
+      },
+      description:
+        "A 501(c)(3) nonprofit trust dedicated to restoring and preserving the General Henry Champion House, a 1790 National Register landmark in Colchester, Connecticut.",
+      logo: socialImageURL,
+      owns: { "@id": "https://henrychampionhouse.org/#place" },
+    },
+    {
+      "@type": "LandmarksOrHistoricalBuildings",
+      "@id": "https://henrychampionhouse.org/#place",
+      name: "The General Henry Champion House",
+      url: "https://henrychampionhouse.org",
+      image: socialImageURL,
+      telephone: "+1-860-603-0603",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "526 Westchester Rd",
+        addressLocality: "Colchester",
+        addressRegion: "CT",
+        postalCode: "06415",
+        addressCountry: "US",
+      },
+      description:
+        "A 1790 Federal-period home listed on the National Register of Historic Places (reference number 72001323, listed October 10, 1972), currently under restoration by the General Henry Champion Trust.",
+      publicAccess: false,
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -46,6 +93,8 @@ const socialImageURL = new URL(image, Astro.site);
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImageURL} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class="flex min-h-screen flex-col">
     <Nav />
