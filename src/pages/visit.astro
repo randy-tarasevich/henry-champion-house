@@ -14,6 +14,11 @@ const wasSent = Astro.url.searchParams.get("sent") === "1";
       src="/images/home-front-spring.webp"
       alt="Front elevation of the General Henry Champion House with the driveway leading up to it"
       class="h-[40vh] w-full object-cover"
+      width="1920"
+      height="1440"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
     <div class="absolute inset-0 flex items-end">

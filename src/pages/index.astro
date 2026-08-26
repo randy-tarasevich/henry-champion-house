@@ -2,7 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Home">
+<Layout
+  title="Colchester, CT's 1790 Revolutionary War Landmark"
+  description="Tour the story and ongoing restoration of the General Henry Champion House, a 1790 National Register landmark in Colchester, Connecticut, with deep ties to the Revolutionary War and the Champion family."
+>
   <!-- Hero -->
   <section class="relative">
     <img
@@ -54,6 +57,10 @@ import Layout from "../layouts/Layout.astro";
           alt="Archival black-and-white photograph of the General Henry Champion House"
           class="h-80 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
           data-lightbox
+          width="206"
+          height="211"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div class="md:order-1">
@@ -74,10 +81,15 @@ import Layout from "../layouts/Layout.astro";
   <section class="bg-[var(--color-parchment)]">
     <div class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-16 md:grid-cols-2">
       <img
-        src="/images/restoration-roof-aerial-2025.webp"
+        src="/images/restoration-roof-aerial-2025-thumb.webp"
+        data-full-src="/images/restoration-roof-aerial-2025.webp"
         alt="Aerial view of the house's roof mid-repair"
         class="h-80 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
         data-lightbox
+        width="900"
+        height="600"
+        loading="lazy"
+        decoding="async"
       />
       <div>
         <h2 class="text-2xl">A House in the Making, Again</h2>

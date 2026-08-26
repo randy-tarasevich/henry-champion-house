@@ -69,6 +69,11 @@ const timeline = [
       src="/images/history-archival.webp"
       alt="Archival photograph of the General Henry Champion House"
       class="h-[50vh] w-full object-cover"
+      width="969"
+      height="671"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
     <div class="absolute inset-0 flex items-end">
@@ -191,16 +196,26 @@ const timeline = [
       </div>
       <div class="mt-6 grid grid-cols-2 gap-4">
         <img
-          src="/images/gallery/portico-with-columns.webp"
+          src="/images/gallery/portico-with-columns-thumb.webp"
+          data-full-src="/images/gallery/portico-with-columns.webp"
           alt="The Ionic-columned, triangular-pedimented entry portico"
           class="h-48 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
           data-lightbox
+          width="647"
+          height="900"
+          loading="lazy"
+          decoding="async"
         />
         <img
-          src="/images/gallery/ionic-capital-detail.webp"
+          src="/images/gallery/ionic-capital-detail-thumb.webp"
+          data-full-src="/images/gallery/ionic-capital-detail.webp"
           alt="Close-up detail of an Ionic column capital on the entry portico"
           class="h-48 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
           data-lightbox
+          width="900"
+          height="712"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </section>

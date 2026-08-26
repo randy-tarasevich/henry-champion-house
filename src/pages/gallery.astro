@@ -49,6 +49,52 @@ const gravesite = [
   { src: "/images/gallery/champion-tomb-obelisk.webp", alt: "A weathered stone obelisk with an urn finial standing beside the Champion family tomb in Westchester Cemetery", caption: "An obelisk marker beside the Champion tomb, among the older stones at Westchester Cemetery." },
   { src: "/images/gallery/champion-gravesite-cemetery.webp", alt: "A wider view of the Champion family tomb among autumn foliage at Westchester Cemetery", caption: "The gravesite in autumn, set within the wrought-iron enclosure at Westchester Cemetery." },
 ];
+
+// Grid thumbnails: the gallery grid shows a small crop of each photo, so it
+// loads a resized -thumb.webp (generated at build time, longest side 900px)
+// instead of the full-resolution original. Clicking still opens the full
+// original in the lightbox via data-full-src. A few source photos were
+// already small enough that a separate thumb wouldn't help -- those just
+// use the original for both.
+const photoGrid = {
+  "/images/gallery/front-elevation-before-restoration.webp": { src: "/images/gallery/front-elevation-before-restoration-thumb.webp", w: 900, h: 675, full: "/images/gallery/front-elevation-before-restoration.webp" },
+  "/images/gallery/boarded-window-before-restoration.webp": { src: "/images/gallery/boarded-window-before-restoration-thumb.webp", w: 900, h: 675, full: "/images/gallery/boarded-window-before-restoration.webp" },
+  "/images/gallery/sunroom-addition-balustrade.webp": { src: "/images/gallery/sunroom-addition-balustrade-thumb.webp", w: 900, h: 675, full: "/images/gallery/sunroom-addition-balustrade.webp" },
+  "/images/gallery/the-barn.webp": { src: "/images/gallery/the-barn-thumb.webp", w: 900, h: 675, full: "/images/gallery/the-barn.webp" },
+  "/images/gallery/aerial-house-and-barn.webp": { src: "/images/gallery/aerial-house-and-barn-thumb.webp", w: 900, h: 599, full: "/images/gallery/aerial-house-and-barn.webp" },
+  "/images/gallery/cannonball-entrance.webp": { src: "/images/gallery/cannonball-entrance-thumb.webp", w: 675, h: 900, full: "/images/gallery/cannonball-entrance.webp" },
+  "/images/gallery/wrought-iron-gates.webp": { src: "/images/gallery/wrought-iron-gates-thumb.webp", w: 900, h: 675, full: "/images/gallery/wrought-iron-gates.webp" },
+  "/images/gallery/empty-pool.webp": { src: "/images/gallery/empty-pool-thumb.webp", w: 675, h: 900, full: "/images/gallery/empty-pool.webp" },
+  "/images/gallery/boarded-bulkhead-entrance.webp": { src: "/images/gallery/boarded-bulkhead-entrance-thumb.webp", w: 675, h: 900, full: "/images/gallery/boarded-bulkhead-entrance.webp" },
+  "/images/gallery/foundation-utility-detail.webp": { src: "/images/gallery/foundation-utility-detail-thumb.webp", w: 675, h: 900, full: "/images/gallery/foundation-utility-detail.webp" },
+  "/images/gallery/portico-with-columns.webp": { src: "/images/gallery/portico-with-columns-thumb.webp", w: 647, h: 900, full: "/images/gallery/portico-with-columns.webp" },
+  "/images/gallery/ionic-capital-detail.webp": { src: "/images/gallery/ionic-capital-detail-thumb.webp", w: 900, h: 712, full: "/images/gallery/ionic-capital-detail.webp" },
+  "/images/gallery/green-door-with-wreath.webp": { src: "/images/gallery/green-door-with-wreath-thumb.webp", w: 448, h: 900, full: "/images/gallery/green-door-with-wreath.webp" },
+  "/images/gallery/house-front-spring-flag.webp": { src: "/images/gallery/house-front-spring-flag.webp", w: 590, h: 443, full: null },
+  "/images/gallery/house-side-spring-blossom.webp": { src: "/images/gallery/house-side-spring-blossom.webp", w: 590, h: 443, full: null },
+  "/images/gallery/house-front-summer-overgrown.webp": { src: "/images/gallery/house-front-summer-overgrown.webp", w: 720, h: 540, full: null },
+  "/images/gallery/house-front-winter.webp": { src: "/images/gallery/house-front-winter-thumb.webp", w: 900, h: 575, full: "/images/gallery/house-front-winter.webp" },
+  "/images/gallery/gambrel-dormer-chimneys-winter.webp": { src: "/images/gallery/gambrel-dormer-chimneys-winter-thumb.webp", w: 900, h: 714, full: "/images/gallery/gambrel-dormer-chimneys-winter.webp" },
+  "/images/gallery/sunroom-light-and-shadow.webp": { src: "/images/gallery/sunroom-light-and-shadow-thumb.webp", w: 675, h: 900, full: "/images/gallery/sunroom-light-and-shadow.webp" },
+  "/images/gallery/green-door-vintage-hardware.webp": { src: "/images/gallery/green-door-vintage-hardware-thumb.webp", w: 675, h: 900, full: "/images/gallery/green-door-vintage-hardware.webp" },
+  "/images/gallery/brass-door-hardware-detail.webp": { src: "/images/gallery/brass-door-hardware-detail-thumb.webp", w: 675, h: 900, full: "/images/gallery/brass-door-hardware-detail.webp" },
+  "/images/gallery/paneled-door-floral-wallpaper.webp": { src: "/images/gallery/paneled-door-floral-wallpaper-thumb.webp", w: 675, h: 900, full: "/images/gallery/paneled-door-floral-wallpaper.webp" },
+  "/images/gallery/six-panel-door-striped-wallpaper.webp": { src: "/images/gallery/six-panel-door-striped-wallpaper-thumb.webp", w: 675, h: 900, full: "/images/gallery/six-panel-door-striped-wallpaper.webp" },
+  "/images/gallery/crown-molding-detail.webp": { src: "/images/gallery/crown-molding-detail-thumb.webp", w: 675, h: 900, full: "/images/gallery/crown-molding-detail.webp" },
+  "/images/gallery/sloped-ceiling-water-damage.webp": { src: "/images/gallery/sloped-ceiling-water-damage-thumb.webp", w: 675, h: 900, full: "/images/gallery/sloped-ceiling-water-damage.webp" },
+  "/images/gallery/antique-china-cabinet.webp": { src: "/images/gallery/antique-china-cabinet-thumb.webp", w: 675, h: 900, full: "/images/gallery/antique-china-cabinet.webp" },
+  "/images/gallery/dining-room-table-chairs.webp": { src: "/images/gallery/dining-room-table-chairs-thumb.webp", w: 900, h: 675, full: "/images/gallery/dining-room-table-chairs.webp" },
+  "/images/gallery/salvaged-furniture-legs.webp": { src: "/images/gallery/salvaged-furniture-legs-thumb.webp", w: 900, h: 675, full: "/images/gallery/salvaged-furniture-legs.webp" },
+  "/images/gallery/hallway-floral-striped-wallpaper.webp": { src: "/images/gallery/hallway-floral-striped-wallpaper.webp", w: 261, h: 171, full: null },
+  "/images/gallery/national-register-plaque.webp": { src: "/images/gallery/national-register-plaque-thumb.webp", w: 900, h: 675, full: "/images/gallery/national-register-plaque.webp" },
+  "/images/gallery/national-register-certificate-framed.webp": { src: "/images/gallery/national-register-certificate-framed-thumb.webp", w: 900, h: 675, full: "/images/gallery/national-register-certificate-framed.webp" },
+  "/images/gallery/country-life-1908-article.webp": { src: "/images/gallery/country-life-1908-article-thumb.webp", w: 675, h: 900, full: "/images/gallery/country-life-1908-article.webp" },
+  "/images/gallery/westchester-country-home-article.webp": { src: "/images/gallery/westchester-country-home-article-thumb.webp", w: 675, h: 900, full: "/images/gallery/westchester-country-home-article.webp" },
+  "/images/gallery/archival-photo-front-topiary.webp": { src: "/images/gallery/archival-photo-front-topiary.webp", w: 206, h: 211, full: null },
+  "/images/gallery/champion-family-tomb.webp": { src: "/images/gallery/champion-family-tomb-thumb.webp", w: 900, h: 680, full: "/images/gallery/champion-family-tomb.webp" },
+  "/images/gallery/champion-tomb-obelisk.webp": { src: "/images/gallery/champion-tomb-obelisk-thumb.webp", w: 600, h: 900, full: "/images/gallery/champion-tomb-obelisk.webp" },
+  "/images/gallery/champion-gravesite-cemetery.webp": { src: "/images/gallery/champion-gravesite-cemetery.webp", w: 250, h: 188, full: null },
+};
 ---
 
 <Layout
@@ -61,6 +107,11 @@ const gravesite = [
       src="/images/home-front-summer.webp"
       alt="The General Henry Champion House today, front elevation with bunting and cannon on the lawn"
       class="h-[45vh] w-full object-cover"
+      width="1200"
+      height="900"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
     <div class="absolute inset-0 flex items-end">
@@ -87,11 +138,15 @@ const gravesite = [
         {houseAndGrounds.map((photo) => (
           <figure>
             <img
-              src={photo.src}
+              src={photoGrid[photo.src].src}
               alt={photo.alt}
               class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
               data-lightbox
+              data-full-src={photoGrid[photo.src].full || undefined}
               loading="lazy"
+              decoding="async"
+              width={photoGrid[photo.src].w}
+              height={photoGrid[photo.src].h}
             />
             <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
           </figure>
@@ -111,11 +166,15 @@ const gravesite = [
         {inside.map((photo) => (
           <figure>
             <img
-              src={photo.src}
+              src={photoGrid[photo.src].src}
               alt={photo.alt}
               class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
               data-lightbox
+              data-full-src={photoGrid[photo.src].full || undefined}
               loading="lazy"
+              decoding="async"
+              width={photoGrid[photo.src].w}
+              height={photoGrid[photo.src].h}
             />
             <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
           </figure>
@@ -134,11 +193,15 @@ const gravesite = [
         {history.map((photo) => (
           <figure>
             <img
-              src={photo.src}
+              src={photoGrid[photo.src].src}
               alt={photo.alt}
               class="h-96 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
               data-lightbox
+              data-full-src={photoGrid[photo.src].full || undefined}
               loading="lazy"
+              decoding="async"
+              width={photoGrid[photo.src].w}
+              height={photoGrid[photo.src].h}
             />
             <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
           </figure>
@@ -157,11 +220,15 @@ const gravesite = [
         {gravesite.map((photo) => (
           <figure>
             <img
-              src={photo.src}
+              src={photoGrid[photo.src].src}
               alt={photo.alt}
               class="h-64 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
               data-lightbox
+              data-full-src={photoGrid[photo.src].full || undefined}
               loading="lazy"
+              decoding="async"
+              width={photoGrid[photo.src].w}
+              height={photoGrid[photo.src].h}
             />
             <figcaption class="mt-2 text-xs text-[var(--color-charcoal)]">{photo.caption}</figcaption>
           </figure>

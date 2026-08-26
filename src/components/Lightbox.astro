@@ -23,7 +23,7 @@
   document.addEventListener("click", (e) => {
     const target = e.target.closest("[data-lightbox]");
     if (target && target.tagName === "IMG") {
-      img.src = target.getAttribute("src");
+      img.src = target.getAttribute("data-full-src") || target.getAttribute("src");
       img.alt = target.getAttribute("alt") || "";
       dialog.showModal();
     }
