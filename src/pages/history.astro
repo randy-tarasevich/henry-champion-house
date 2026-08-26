@@ -1,5 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const timeline = [
+  {
+    date: "1775",
+    title: "Named to Feed an Army",
+    description: "Colonel Henry Champion is selected as a Commissary for the Revolutionary War effort.",
+    href: "#colonel",
+  },
+  {
+    date: "1777\u201378",
+    title: "300 Miles to Valley Forge",
+    description: "Colonel Champion drives a cattle herd to Washington's starving army in the brutal winter.",
+    href: "#colonel",
+  },
+  {
+    date: "1779",
+    title: "The Capture of Stony Point",
+    description: "General Henry Champion serves under Washington's direct command in the celebrated night assault.",
+    href: "#general",
+  },
+  {
+    date: "1790",
+    title: "The House Is Built",
+    description: "Colonel Champion builds the house in Colchester's Westchester section for his bride, Deborah Brainard.",
+    href: "#built",
+  },
+  {
+    date: "1797",
+    title: "Passed to the Next Champion",
+    description: "Colonel Champion dies; the house passes to his son, General Henry Champion.",
+    href: "#built",
+  },
+  {
+    date: "1836",
+    title: "End of an Era",
+    description: "General Henry Champion dies at the house, closing 46 years of Champion family residence.",
+    href: "#general",
+  },
+  {
+    date: "1972",
+    title: "Nationally Recognized",
+    description: "The house is added to the National and State Registers of Historic Places.",
+    href: "#register",
+  },
+  {
+    date: "2024",
+    title: "A House Nearly Lost",
+    description: "Facing foreclosure after years of vacancy, the General Henry Champion Trust steps in to save it.",
+    href: "/restoration#rescue",
+  },
+  {
+    date: "2026",
+    title: "Restoration Begins",
+    description: "New roofs go on the house and barn \u2014 the first, most urgent phase of bringing it back.",
+    href: "/restoration#today",
+  },
+];
 ---
 
 <Layout
@@ -24,8 +81,26 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 
+  <!-- Timeline -->
+  <section class="mx-auto max-w-3xl px-6 pt-16">
+    <p class="eyebrow text-[var(--color-brick)]">At a Glance</p>
+    <h2 class="mt-2 text-2xl">230 Years, in Brief</h2>
+    <ol class="relative mt-8 border-l-2 border-[var(--color-stone)] pl-8">
+      {timeline.map((event) => (
+        <li class="relative pb-10 last:pb-0">
+          <span class="absolute -left-[2.35rem] top-1 h-4 w-4 rounded-full border-2 border-[var(--color-brick)] bg-[var(--color-cream)]"></span>
+          <a href={event.href} class="group block">
+            <span class="eyebrow text-[var(--color-brick)]">{event.date}</span>
+            <h3 class="mt-1 text-lg group-hover:text-[var(--color-brick)]">{event.title}</h3>
+            <p class="mt-1 text-sm leading-relaxed text-[var(--color-charcoal)]">{event.description}</p>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+
   <article class="mx-auto max-w-3xl px-6 py-16">
-    <section>
+    <section id="built">
       <h2 class="text-2xl">Built by a Colonel, for His Bride</h2>
       <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
         The house was built in 1790 by Colonel Henry Champion, a Revolutionary War officer, following his
@@ -37,7 +112,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="mt-12">
+    <section id="colonel" class="mt-12">
       <h2 class="text-2xl">Colonel Henry Champion &mdash; Feeding an Army</h2>
       <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
         Colonel Henry Champion (1723&ndash;1797) was born in East Haddam, the grandson of an original
@@ -60,7 +135,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="mt-12">
+    <section id="general" class="mt-12">
       <h2 class="text-2xl">General Henry Champion &mdash; A Life at the House</h2>
       <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
         General Henry Champion (1751&ndash;1836) was born and died in this part of Colchester, then known
@@ -82,7 +157,7 @@ import Layout from "../layouts/Layout.astro";
       </p>
     </section>
 
-    <section class="mt-12">
+    <section id="architecture" class="mt-12">
       <h2 class="text-2xl">An Architectural Record</h2>
       <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
         The house's Federal-period details are well documented in its 1972 National Register nomination: a
@@ -92,9 +167,45 @@ import Layout from "../layouts/Layout.astro";
         the south, later fitted with a conservatory. A historic stone wall with iron gates still marks the
         property's edge along the road.
       </p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Spratt's own story is nearly as improbable as the house he built. A Scottish-born soldier in the
+        British Royal Artillery, he was captured at the 1777 Battle of Saratoga and spent three years as a
+        prisoner of war in Hartford and Farmington before choosing to stay in Connecticut rather than
+        return home. He went on to design some of the region's finest Federal and Georgian houses,
+        including &ldquo;The Terraces,&rdquo; General Epaphroditus Champion's riverside estate in East
+        Haddam, still admired for its sweeping stone terraces above the Connecticut River.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <span class="eyebrow rounded-full border border-[var(--color-brick)] px-4 py-2 text-[var(--color-brick)]">
+          Federal-Period Design, 1790
+        </span>
+        <span class="eyebrow rounded-full border border-[var(--color-brick)] px-4 py-2 text-[var(--color-brick)]">
+          Master Builder: William Spratt
+        </span>
+        <span class="eyebrow rounded-full border border-[var(--color-brick)] px-4 py-2 text-[var(--color-brick)]">
+          National Register of Historic Places, 1972
+        </span>
+        <span class="eyebrow rounded-full border border-[var(--color-brick)] px-4 py-2 text-[var(--color-brick)]">
+          Washington&ndash;Rochambeau Revolutionary Route
+        </span>
+      </div>
+      <div class="mt-6 grid grid-cols-2 gap-4">
+        <img
+          src="/images/gallery/portico-with-columns.webp"
+          alt="The Ionic-columned, triangular-pedimented entry portico"
+          class="h-48 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+          data-lightbox
+        />
+        <img
+          src="/images/gallery/ionic-capital-detail.webp"
+          alt="Close-up detail of an Ionic column capital on the entry portico"
+          class="h-48 w-full cursor-zoom-in rounded-lg object-cover shadow-sm"
+          data-lightbox
+        />
+      </div>
     </section>
 
-    <section class="mt-12">
+    <section id="register" class="mt-12">
       <h2 class="text-2xl">Nationally Recognized</h2>
       <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
         The Champion House holds two federal historic designations. It was added to the National and State
@@ -114,7 +225,14 @@ import Layout from "../layouts/Layout.astro";
           class="text-[var(--color-brick)] underline"
           target="_blank"
           rel="noopener noreferrer"
-        >Colchester Historical Society</a>.
+        >Colchester Historical Society</a>. Additional archival photographs of the house, taken for the
+        Library of Congress's Historic American Buildings Survey (HABS CT-143), are available through the
+        <a
+          href="https://www.loc.gov/resource/hhh.ct0216.photos"
+          class="text-[var(--color-brick)] underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Library of Congress</a>.
       </p>
     </section>
   </article>
