@@ -21,11 +21,11 @@ Two Champions, a Revolutionary War, and 230 years of history on Westchester Road
 
 ---
 
-### Built by a Colonel, for His Bride
+### Built by a Colonel, for His Son
 
 **Body copy:**
 
-> The house was built in 1790 by Colonel Henry Champion, a Revolutionary War officer, following his 1789 marriage to Deborah Brainard, a Colchester woman. It was designed by William Spratt, the same house joiner who designed the Epaphroditus Champion House in East Haddam and the Deming House in Litchfield. Colonel Champion lived here until his death in 1797, after which the house passed to his son, General Henry Champion, who lived here until his own death in 1836 — the long tenure that gives the house the name it carries today.
+> The house was built in 1790 by Colonel Henry Champion, a Revolutionary War officer, as a home for his son, General Henry Champion. It was designed by William Spratt, the same house joiner who designed the Epaphroditus Champion House in East Haddam and the Deming House in Litchfield. General Henry Champion made the house his home for the rest of his life, until his own death in 1836 — the 46-year tenure that gives the house the name it carries today. Colonel Champion, who commissioned the house, died in 1797.
 
 ---
 
@@ -143,7 +143,7 @@ The house is privately owned and under active restoration — here's how to reac
 1. ~~Col. vs. Gen. Henry Champion~~ — resolved: house belonged to Gen. Henry Champion.
 2. ~~Visit policy~~ — resolved: no public visiting at this stage, house under active renovation.
 3. ~~Badge treatment for National Register + W3R Trail~~ — resolved 2026-08-03: no badges, plain text.
-4. ~~Who the house was built for~~ — resolved 2026-08-05: per the Colchester Historical Society's Col. Henry Champion exhibit PDF (Charles-provided, `col-henry-champiobn.pdf`), the house was built by Colonel Champion for himself and his 1789 bride, Deborah Brainard — not for General Champion's marriage to Abigail Tinker as previously drafted. Headline, hero copy, and the "Built by..." section updated accordingly on 2026-08-05.
+4. ~~Who the house was built for~~ — re-resolved 2026-08-26: Charles flagged by email that this doesn't match the family's story — Colonel Champion built the house *for his son*, General Henry Champion, not for himself and a bride. This matches the HABS documentation and the Champion Family Houses/Spratt research PDFs (both say "built for his son"), and reverses the 2026-08-05 read of `col-henry-champiobn.pdf` (which was itself hedged: "it is believed..."). Headline, hero copy, and the "Built by..." section, plus the timeline entries for 1790/1797, updated on 2026-08-26. The Deborah Brainard marriage detail was dropped from this section since it was the previous (incorrect) source's justification for the build date — unconfirmed whether/how it connects to the Colonel's own life story; flag to Charles if he wants it reintroduced elsewhere.
 5. Confirm whether direct email/phone should appear on the Visit/Contact page alongside the form, or form-only.
 6. Once new roof photos come in, consider whether any belong on the History page (architectural "as restored" update) in addition to Restoration Progress.
 7. New from the 2026-08-05 PDF: added Colonel Champion's lineage/militia/French & Indian War background, his 1775 Commissary appointment, the Deborah Champion dispatch-ride tradition, and General Champion's grave/obelisk location. Consider whether Charles wants the Deborah Champion story to get its own callout/sidebar given how vivid it is — currently folded into the Colonel's section as a paragraph.
