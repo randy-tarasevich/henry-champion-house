@@ -1,16 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-// Roof-week photos: the grid shows resized thumbs (longest side 900px);
-// the lightbox opens the full-resolution original via `full`.
-const roofWeekPhotos = [
-  { src: "/images/roof-week-01-thumb.webp", full: "/images/roof-week-01.webp", alt: "Barn roof torn down to bare decking, with a cupola and rental dumpsters staged on the lawn", w: 675, h: 900 },
-  { src: "/images/roof-week-02-thumb.webp", full: "/images/roof-week-02.webp", alt: "Crew working on the barn roof tear-off", w: 900, h: 675 },
-  { src: "/images/roof-week-03-thumb.webp", full: "/images/roof-week-03.webp", alt: "Crew continuing to strip the barn roof down to bare decking", w: 900, h: 675 },
-  { src: "/images/roof-week-04-thumb.webp", full: "/images/roof-week-04.webp", alt: "The house's gambrel roof mid-tear-off, tarped and exposed near the dormers and chimney", w: 675, h: 900 },
-  { src: "/images/roof-week-05-thumb.webp", full: "/images/roof-week-05.webp", alt: "New plywood sheathing installed on the barn roof, with freshly painted siding below", w: 900, h: 675 },
-  { src: "/images/roof-week-06-thumb.webp", full: "/images/roof-week-06.webp", alt: "Close-up of the house's gambrel roof mid-tear-off, chimney and dormers exposed", w: 900, h: 675 },
-];
 ---
 
 <Layout
@@ -78,7 +67,6 @@ const roofWeekPhotos = [
       <div class="mt-6 grid gap-4 sm:grid-cols-2">
         <img src="/images/restoration-before-siding-thumb.webp" data-full-src="/images/restoration-before-siding.webp" alt="Weathered siding and overgrown grounds at the time of acquisition" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox width="900" height="599" loading="lazy" decoding="async" />
         <img src="/images/restoration-before-aerial-winter.webp" alt="Winter aerial view of the full property, showing the house, pool, and barn" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox width="480" height="360" loading="lazy" decoding="async" />
-        <img src="/images/roof-damage-closeup-thumb.webp" data-full-src="/images/roof-damage-closeup.webp" alt="Close-up of the old roof's rotted fascia, exposed rafter tails, and damaged soffit venting" class="h-56 w-full cursor-zoom-in rounded-lg object-cover shadow-sm sm:col-span-2" data-lightbox width="675" height="900" loading="lazy" decoding="async" />
       </div>
     </section>
 
@@ -96,11 +84,6 @@ const roofWeekPhotos = [
         wood shingles near the dormers and chimney. It was loud, dusty, and genuinely satisfying work to
         watch.
       </p>
-      <div class="mt-6 grid gap-4 sm:grid-cols-3">
-        {roofWeekPhotos.map((photo) => (
-          <img src={photo.src} alt={photo.alt} class="h-40 w-full cursor-zoom-in rounded-lg object-cover shadow-sm" data-lightbox data-full-src={photo.full} width={photo.w} height={photo.h} loading="lazy" decoding="async" />
-        ))}
-      </div>
       <p class="mt-4 text-sm italic text-[var(--color-charcoal)]">
         More photos of the completed roof work coming soon.
       </p>
