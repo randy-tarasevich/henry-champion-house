@@ -1,0 +1,222 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// DRAFT — 2026-08-28
+// Built from three planning documents Charles sent Randy on 2026-08-27/28:
+// a Capital Grant & Preservation Master Plan budget ($1,257,100) and two
+// "Preservation Plan" narrative editions (2026, 2027). The 2026 edition
+// cited "NJDEP" (New Jersey) compliance guidance for this Connecticut
+// property, and neither narrative names who prepared the condition
+// assessment or the itemized budget — so the figures below are DRAFT,
+// not yet confirmed with Charles. Also note: this plan's Phase I still
+// lists "cedar gambrel reroofing" as upcoming work, but the site already
+// documents that roof replacement as completed in August 2026 — flagged
+// inline below and worth resolving with Charles before this goes live.
+// Remove the <DraftNotice /> section and this comment once confirmed.
+
+const phases = [
+  {
+    phase: "Phase I",
+    title: "Pre-Development & Structural Stabilization",
+    window: "Months 1–6",
+    capital: "$382,500",
+    items: [
+      "Historic Structures Report, 3D laser scan & structural engineering",
+      "Foundation underpinning & repointing",
+      "Carrying sill replacement & heavy timber splicing",
+      "Chimney stack stabilization",
+    ],
+    note: "The reroofing work described in the source plan for this phase was already completed in August 2026 — see Restoration Progress.",
+  },
+  {
+    phase: "Phase II",
+    title: "Envelope & Weather-Tightness",
+    window: "Months 7–12",
+    capital: "$312,600",
+    items: [
+      "Historic sash window restoration (36 units)",
+      "Period white pine clapboard siding & trim",
+      "Lead-safe paint removal & repainting",
+      "Main entry portico & millwork restoration",
+    ],
+  },
+  {
+    phase: "Phase III",
+    title: "Systems & Interior Conservation",
+    window: "Months 13–18",
+    capital: "$393,000",
+    items: [
+      "Geothermal / VRF climate control",
+      "Electrical service upgrade & fire suppression",
+      "ADA-compliant restroom infrastructure",
+      "Lime plaster stabilization & heart pine flooring care",
+    ],
+  },
+  {
+    phase: "Phase IV",
+    title: "Site, ADA Accessibility & Closeout",
+    window: "Months 19–24",
+    capital: "$169,000",
+    items: [
+      "Perimeter drainage & stormwater infiltration",
+      "ADA-accessible pathway & approach ramp",
+      "Grounds regrading & historic tree preservation",
+      "Grant closeout audit",
+    ],
+  },
+];
+
+const fundingSources = [
+  { source: "Private Philanthropy & Trust Match", amount: "$450,000", share: "35.8%" },
+  { source: "NPS Save America's Treasures (SAT)", amount: "$350,000", share: "27.8%" },
+  { source: "CT SHPO Historic Restoration Fund", amount: "$200,000", share: "15.9%" },
+  { source: "Municipal & Community Preservation Support", amount: "$178,550", share: "14.2%" },
+  { source: "The 1772 Foundation Capital Grant", amount: "$78,550", share: "6.3%" },
+];
+---
+
+<Layout
+  title="Preservation Plan"
+  description="A four-phase, $1.26M plan to fully rehabilitate the General Henry Champion House, guided by the Secretary of the Interior's Standards."
+>
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/restoration-roof-aerial-2025.webp"
+      alt="Aerial view of the General Henry Champion House and barn"
+      class="h-[45vh] w-full object-cover"
+      width="1280"
+      height="854"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="mx-auto w-full max-w-6xl px-6 pb-12 text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+        <h1 class="text-4xl md:text-5xl">Preservation Plan</h1>
+        <p class="mt-4 max-w-xl text-lg text-white/90">
+          A four-phase roadmap for fully rehabilitating the house and grounds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    <!-- DRAFT NOTICE — remove once Charles confirms figures -->
+    <section class="rounded-lg border-2 border-dashed border-[var(--color-brick)] bg-[var(--color-parchment)] px-6 py-5">
+      <p class="eyebrow text-[var(--color-brick)]">Internal note — not for publication yet</p>
+      <p class="mt-2 text-sm leading-relaxed text-[var(--color-charcoal)]">
+        This page is a draft built directly from the planning documents Charles sent. The dollar figures,
+        phase budgets, and named grant programs below have <strong>not been confirmed</strong> — we don't
+        yet know who prepared them or whether an engineer/architect has vetted them. Please confirm with
+        Charles before this page is linked from navigation or made public.
+      </p>
+    </section>
+
+    <!-- Overview -->
+    <section class="mt-14">
+      <p class="eyebrow text-[var(--color-brick)]">Our Plan</p>
+      <h2 class="mt-2 text-2xl">A Complete Path Forward</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Beyond the emergency roof work already completed, the Trust has outlined a full rehabilitation
+        plan for the house, barn, and grounds &mdash; covering structural stabilization, the historic
+        envelope, mechanical and life-safety systems, interior conservation, and ADA accessibility. The
+        plan follows the Secretary of the Interior's Standards for the Treatment of Historic Properties,
+        developed in coordination with the Connecticut State Historic Preservation Office (SHPO) and the
+        National Park Service (NPS).
+      </p>
+    </section>
+
+    <!-- At a glance -->
+    <section class="mt-14 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-6 py-6 text-center">
+        <p class="text-xs eyebrow text-[var(--color-charcoal)]">Total Capital Need</p>
+        <p class="mt-2 text-2xl text-[var(--color-brick)]">$1,257,100</p>
+      </div>
+      <div class="rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-6 py-6 text-center">
+        <p class="text-xs eyebrow text-[var(--color-charcoal)]">Grant Target (50%)</p>
+        <p class="mt-2 text-2xl text-[var(--color-brick)]">$628,550</p>
+      </div>
+      <div class="rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-6 py-6 text-center">
+        <p class="text-xs eyebrow text-[var(--color-charcoal)]">Matching Capital Needed</p>
+        <p class="mt-2 text-2xl text-[var(--color-brick)]">$628,550</p>
+      </div>
+    </section>
+
+    <!-- Phases -->
+    <section class="mt-16">
+      <h2 class="text-2xl">Four Phases, Two Years</h2>
+      <div class="mt-6 space-y-6">
+        {phases.map((p) => (
+          <div class="rounded-lg border border-[var(--color-stone)] px-6 py-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 class="text-lg">
+                <span class="text-[var(--color-brick)]">{p.phase}:</span> {p.title}
+              </h3>
+              <p class="text-sm text-[var(--color-charcoal)]">{p.window} &middot; {p.capital}</p>
+            </div>
+            <ul class="mt-3 list-disc space-y-1 pl-5 text-sm leading-relaxed text-[var(--color-charcoal)]">
+              {p.items.map((item) => <li>{item}</li>)}
+            </ul>
+            {p.note && (
+              <p class="mt-3 text-sm italic text-[var(--color-charcoal)]">{p.note}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Funding sources -->
+    <section class="mt-16">
+      <h2 class="text-2xl">How the Plan Is Funded</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Half of the total capital need is targeted from competitive state and federal historic
+        preservation grants; the other half comes from private philanthropy, trust funds, and community
+        support &mdash; including gifts like yours.
+      </p>
+      <div class="mt-6 overflow-x-auto">
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-[var(--color-stone)] text-left text-[var(--color-charcoal)]">
+              <th class="py-2 pr-4 font-normal">Funding Source</th>
+              <th class="py-2 pr-4 font-normal">Target Amount</th>
+              <th class="py-2 font-normal">Share</th>
+            </tr>
+          </thead>
+          <tbody>
+            {fundingSources.map((f) => (
+              <tr class="border-b border-[var(--color-stone)]/60">
+                <td class="py-2 pr-4">{f.source}</td>
+                <td class="py-2 pr-4">{f.amount}</td>
+                <td class="py-2">{f.share}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Standards -->
+    <section class="mt-16">
+      <h2 class="text-2xl">How We Work</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        Every phase of this plan is overseen by a licensed historic preservation architect and an Owner's
+        Project Manager, in coordination with CT SHPO and the National Park Service. Trade work goes out
+        for competitive bid, and preservation choices &mdash; from lime mortar repointing to sash window
+        restoration &mdash; are made to keep as much original material and craftsmanship intact as
+        possible.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-8 py-10 text-center">
+      <h2 class="text-2xl">Help Us Reach the Match</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-relaxed text-[var(--color-charcoal)]">
+        Every private gift helps meet the matching-fund requirements behind our state and federal grant
+        applications.
+      </p>
+      <a href="/donate" class="btn-primary mt-6 shadow-lg shadow-black/50 ring-1 ring-white/15">Support the Restoration</a>
+    </section>
+  </article>
+</Layout>
