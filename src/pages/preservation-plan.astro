@@ -1,0 +1,318 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Preservation & Rehabilitation Plan content, from the "Historic Preservation
+// & Rehabilitation Plan" document (Draft v1.1, August 2026) Charles sent
+// Randy 2026-08-31, asking for it to go live on this page.
+
+const phases = [
+  {
+    title: "Phase I: Structural Integrity, Timber Shoring & Foundation Stabilization",
+    cost: "$95,000",
+    items: [
+      {
+        label: "Fieldstone Masonry",
+        text: "Repoint deteriorated foundation walls and central chimney base using compatible Natural Hydraulic Lime (NHL) mortar.",
+      },
+      {
+        label: "Timber Sills & Shoring",
+        text: "Jack sagging timber bays; replace rotted structural sills and corner posts using traditional joinery and seasoned white oak.",
+      },
+      {
+        label: "Outbuilding Shoring",
+        text: "Provide cribbing, foundation underpinning, and lateral bracing to stabilize adjacent historic timber outbuildings.",
+      },
+    ],
+  },
+  {
+    title: "Phase II: Envelope Weathertightness, Roofing & Exterior Restoration",
+    cost: "$115,000",
+    items: [
+      {
+        label: "Roofing & Flashing",
+        text: "Install permanent, period-appropriate wood cedar shake or standing-seam roofing with lead-coated copper valley flashings.",
+      },
+      {
+        label: "Clapboard Siding",
+        text: "Conserve sound historic clapboards; install custom quarter-sawn pine siding matching historic profiles and hand-nailing patterns.",
+      },
+      {
+        label: "Fenestration",
+        text: "Restring sash cords, repair pulley systems, reglaze original multi-pane sash windows with linseed oil putty, and conserve glass.",
+      },
+    ],
+  },
+  {
+    title: "Phase III: Mechanical, Electrical, Plumbing (MEP) & Environmental Systems",
+    cost: "$85,000",
+    items: [
+      {
+        label: "Climate Control",
+        text: "Install high-efficiency multi-zone HVAC with low-impact distribution to protect historic plaster and timber from humidity fluctuations.",
+      },
+      {
+        label: "Electrical & Life Safety",
+        text: "Complete code rewiring via concealed channels; install addressable fire alarm, heat detection, and life-safety systems.",
+      },
+      {
+        label: "Plumbing Infrastructure",
+        text: "Sensitive rough-in and installation of sanitary facilities in secondary utility zones without cutting major framing.",
+      },
+    ],
+  },
+  {
+    title: "Phase IV: Interior Plaster Conservation & Period Millwork",
+    cost: "$75,000",
+    items: [
+      {
+        label: "Lime Plaster",
+        text: "Consolidate and repair original three-coat lime and horsehair plaster over hand-split wood lath.",
+      },
+      {
+        label: "Historic Flooring",
+        text: "Secure and treat wide-plank chestnut and pine floorboards with non-destructive preservation methods and natural finishes.",
+      },
+      {
+        label: "Millwork & Finishes",
+        text: "Restore mantels, wainscoting, and trim; conduct stratigraphic paint analysis to reproduce period-accurate pigments.",
+      },
+    ],
+  },
+  {
+    title: "Phase V: Site Hydrology, Foundation Drainage & Perimeter Regrading",
+    cost: "$55,000",
+    items: [
+      {
+        label: "Perimeter Hydrology",
+        text: "Implement perimeter French drains, curtain swales, and positive grading to divert runoff away from historic foundations.",
+      },
+      {
+        label: "Site Grading & Walkways",
+        text: "Regrade soils around the masonry perimeter to ensure continuous positive drainage away from structural sills.",
+      },
+    ],
+  },
+];
+
+const budgetRows = [
+  { phase: "Phase I", focus: "Structural Integrity & Shoring", scope: "Foundation repointing, timber sill splicing, post jacking, barn shoring", cost: "$95,000" },
+  { phase: "Phase II", focus: "Envelope Weathertightness", scope: "Permanent roofing, lead-coated copper flashing, siding, window sash restoration", cost: "$115,000" },
+  { phase: "Phase III", focus: "MEP & Environmental Systems", scope: "High-efficiency climate control, whole-house code rewiring, life-safety detection", cost: "$85,000" },
+  { phase: "Phase IV", focus: "Interior Plaster & Millwork", scope: "Lime plaster stabilization, wide-plank flooring, architectural mantel/trim restoration", cost: "$75,000" },
+  { phase: "Phase V", focus: "Site Hydrology & Grading", scope: "Curtain drainage swales, perimeter grading, foundation water diversion", cost: "$55,000" },
+];
+---
+
+<Layout
+  title="Preservation Plan"
+  description="The phased, five-part preservation and rehabilitation plan for the General Henry Champion House — structural stabilization, envelope restoration, systems, interior conservation, and site drainage."
+>
+  <!-- Hero -->
+  <section class="relative">
+    <img
+      src="/images/home-front-overcast.webp"
+      alt="The General Henry Champion House, front elevation"
+      class="h-[42vh] w-full object-cover"
+      width="1024"
+      height="1024"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/5"></div>
+    <div class="absolute inset-0 flex items-end">
+      <div class="mx-auto w-full max-w-6xl px-6 pb-12 text-white [text-shadow:0_2px_10px_rgba(0,0,0,0.55)]">
+        <h1 class="text-4xl md:text-5xl">Historic Preservation &amp; Rehabilitation Plan</h1>
+        <p class="mt-4 max-w-xl text-lg text-white/90">
+          Physical stabilization &amp; architectural restoration for the General Henry Champion House (c. 1790).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-3xl px-6 py-16">
+    <!-- Property snapshot -->
+    <section>
+      <div class="overflow-hidden rounded-lg border border-[var(--color-stone)]">
+        <dl class="divide-y divide-[var(--color-stone)]">
+          <div class="grid grid-cols-1 gap-1 bg-[var(--color-parchment)] px-6 py-4 sm:grid-cols-3 sm:gap-4">
+            <dt class="eyebrow text-[var(--color-brick)]">Property Identification</dt>
+            <dd class="text-sm text-[var(--color-charcoal)] sm:col-span-2">General Henry Champion House &amp; Historic Outbuildings</dd>
+          </div>
+          <div class="grid grid-cols-1 gap-1 px-6 py-4 sm:grid-cols-3 sm:gap-4">
+            <dt class="eyebrow text-[var(--color-brick)]">Location &amp; Parcel</dt>
+            <dd class="text-sm text-[var(--color-charcoal)] sm:col-span-2">526 Westchester Road, Colchester, CT 06415 &middot; Approx. 1.67&ndash;1.75 acres</dd>
+          </div>
+          <div class="grid grid-cols-1 gap-1 bg-[var(--color-parchment)] px-6 py-4 sm:grid-cols-3 sm:gap-4">
+            <dt class="eyebrow text-[var(--color-brick)]">Historic Status</dt>
+            <dd class="text-sm text-[var(--color-charcoal)] sm:col-span-2">National Register of Historic Places (Colchester, CT)</dd>
+          </div>
+          <div class="grid grid-cols-1 gap-1 px-6 py-4 sm:grid-cols-3 sm:gap-4">
+            <dt class="eyebrow text-[var(--color-brick)]">Document Version / Status</dt>
+            <dd class="text-sm text-[var(--color-charcoal)] sm:col-span-2">Draft v1.1 (August 2026) &middot; Working physical preservation scope</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Preliminary draft notice -->
+    <section class="mt-8 rounded-lg border-l-4 border-[var(--color-brick)] bg-[var(--color-parchment)] px-6 py-5">
+      <p class="eyebrow text-[var(--color-brick)]">Preliminary Draft Notice &amp; Scope Disclaimer</p>
+      <p class="mt-2 text-sm leading-relaxed text-[var(--color-charcoal)] italic">
+        This document is an initial technical working draft prepared for condition benchmarking, architectural
+        planning, and baseline restoration scoping. All scopes of work, structural repair methodologies,
+        construction phasing timelines, and line-item cost projections are provisional and subject to ongoing
+        revision, formal modification, licensed engineering evaluations, contractor competitive bidding, and
+        relevant historic preservation standards. This document does not constitute a final binding
+        construction contract, appraisal, or legal commitment.
+      </p>
+    </section>
+
+    <!-- Executive summary -->
+    <section class="mt-14">
+      <h2 class="text-2xl">Executive Summary &amp; Preservation Scope</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        The General Henry Champion House, constructed circa 1790 in Colchester, Connecticut, is a landmark
+        example of late 18th-century Connecticut vernacular and Federal transitional timber-framed domestic
+        architecture. The property encompasses the historic principal residence, a timber-framed agricultural
+        barn, and ancillary outbuildings set upon 1.75 acres.
+      </p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        This preservation plan outlines the physical stabilization, structural repair, and architectural
+        conservation of the estate in accordance with the <em>Secretary of the Interior's Standards for the
+        Treatment of Historic Properties (Rehabilitation)</em>. The scope is organized around direct physical
+        interventions necessary to safeguard the historic fabric, secure the building envelope against moisture
+        intrusion, and modernize core building infrastructure.
+      </p>
+    </section>
+
+    <!-- Historical provenance & architectural fabric -->
+    <section class="mt-14">
+      <h2 class="text-2xl">Historical Provenance &amp; Architectural Fabric</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        <strong>Historical Provenance:</strong> The homestead is directly linked to General Henry Champion
+        (1751&ndash;1835), a Continental Army officer and Commissary General who directed the critical
+        provisioning of food and supplies for General George Washington's troops during the Revolutionary War.
+        Following the war, General Champion served in the Connecticut General Assembly and contributed
+        significantly to regional civic life.
+      </p>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        <strong>Architectural Fabric:</strong> The residence is a 2.5-story heavy timber-frame structure
+        reflecting high retention of original 18th-century fabric:
+      </p>
+      <ul class="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-charcoal)]">
+        <li><strong>Timber Joinery:</strong> Intact hand-hewn white oak heavy timber posts, girts, and tie-beams assembled with mortise-and-tenon joinery.</li>
+        <li><strong>Central Masonry Core:</strong> Massive central fieldstone and hand-struck brick chimney massing featuring multiple cooking fireplaces and original lintels.</li>
+        <li><strong>Interior Woodwork:</strong> Surviving raised-field paneling, fireplace mantels, wide-plank chestnut and pine flooring, and four-panel doors.</li>
+        <li><strong>Fenestration:</strong> Historic multi-pane double-hung wood sash windows with surviving cylinder glass and authentic exterior shutters.</li>
+      </ul>
+    </section>
+
+    <!-- Phased work packages -->
+    <section id="phases" class="mt-14">
+      <h2 class="text-2xl">Phased Direct Rehabilitation Work Packages</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        The rehabilitation is organized into five sequential work packages, prioritized to address structural
+        safety first, then the building envelope, systems, interior fabric, and finally the surrounding site.
+      </p>
+      <div class="mt-6 space-y-4">
+        {phases.map((phase) => (
+          <div class="rounded-lg border border-[var(--color-stone)] px-6 py-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h3 class="text-lg">{phase.title}</h3>
+              <span class="whitespace-nowrap text-lg text-[var(--color-brick)]">{phase.cost}</span>
+            </div>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-[var(--color-charcoal)]">
+              {phase.items.map((item) => (
+                <li><strong>{item.label}:</strong> {item.text}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Cost summary -->
+    <section id="budget" class="mt-14">
+      <h2 class="text-2xl">Direct Rehabilitation Cost Summary</h2>
+
+      <h3 class="mt-8 text-base text-[var(--color-brick)]">Prior Stabilization &amp; Capital Invested to Date</h3>
+      <div class="mt-4 overflow-x-auto rounded-lg border border-[var(--color-stone)]">
+        <table class="w-full min-w-[560px] border-collapse text-left text-sm">
+          <thead>
+            <tr class="bg-[var(--color-brick)] text-[var(--color-cream)]">
+              <th class="px-4 py-3 font-normal">Category</th>
+              <th class="px-4 py-3 font-normal">Description / Scope</th>
+              <th class="px-4 py-3 text-right font-normal">Capital Outlay</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--color-stone)]">
+            <tr>
+              <td class="px-4 py-3 align-top font-medium text-[var(--color-ink)]">Property Acquisition Basis</td>
+              <td class="px-4 py-3 align-top text-[var(--color-charcoal)]">Acquisition of the 1790 homestead, barn, and 1.75-acre parcel</td>
+              <td class="px-4 py-3 text-right align-top text-[var(--color-charcoal)]">$297,500</td>
+            </tr>
+            <tr class="bg-[var(--color-parchment)]">
+              <td class="px-4 py-3 align-top font-medium text-[var(--color-ink)]">Initial Stabilization Outlays</td>
+              <td class="px-4 py-3 align-top text-[var(--color-charcoal)]">Roofing ($60k), clean-out ($30k), labor ($25k), building supplies ($20k), boiler &amp; utilities</td>
+              <td class="px-4 py-3 text-right align-top text-[var(--color-charcoal)]">~$150,000+</td>
+            </tr>
+            <tr class="border-t-2 border-[var(--color-stone)] font-medium text-[var(--color-ink)]">
+              <td class="px-4 py-3" colspan="2">Total Prior Capital Invested to Date</td>
+              <td class="px-4 py-3 text-right">~$447,500+</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="mt-10 text-base text-[var(--color-brick)]">5-Phase Direct Historic Rehabilitation Budget</h3>
+      <div class="mt-4 overflow-x-auto rounded-lg border border-[var(--color-stone)]">
+        <table class="w-full min-w-[640px] border-collapse text-left text-sm">
+          <thead>
+            <tr class="bg-[var(--color-brick)] text-[var(--color-cream)]">
+              <th class="px-4 py-3 font-normal">Phase</th>
+              <th class="px-4 py-3 font-normal">Preservation Focus</th>
+              <th class="px-4 py-3 font-normal">Key Work Scope</th>
+              <th class="px-4 py-3 text-right font-normal">Projected Cost</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-[var(--color-stone)]">
+            {budgetRows.map((row, i) => (
+              <tr class:list={[i % 2 === 1 && "bg-[var(--color-parchment)]"]}>
+                <td class="px-4 py-3 align-top font-medium text-[var(--color-ink)]">{row.phase}</td>
+                <td class="px-4 py-3 align-top text-[var(--color-charcoal)]">{row.focus}</td>
+                <td class="px-4 py-3 align-top text-[var(--color-charcoal)]">{row.scope}</td>
+                <td class="px-4 py-3 text-right align-top text-[var(--color-charcoal)]">{row.cost}</td>
+              </tr>
+            ))}
+            <tr class="border-t-2 border-[var(--color-stone)] font-medium text-[var(--color-ink)]">
+              <td class="px-4 py-3" colspan="3">Total Direct Rehabilitation Budget (Phases I&ndash;V)</td>
+              <td class="px-4 py-3 text-right text-[var(--color-brick)]">$425,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Standards -->
+    <section class="mt-14">
+      <h2 class="text-2xl">Standards &amp; Technical Execution</h2>
+      <p class="mt-4 leading-relaxed text-[var(--color-charcoal)]">
+        All structural, masonry, and architectural interventions are specified to conform strictly to the
+        <em>Secretary of the Interior's Standards for the Treatment of Historic Properties (Rehabilitation)</em>.
+        Priorities are established to ensure physical durability, envelope weathertightness, and preservation of
+        the historic character-defining elements of the 1790 structure.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 rounded-lg border border-[var(--color-stone)] bg-[var(--color-parchment)] px-8 py-10 text-center">
+      <h2 class="text-2xl">Help Fund the Plan</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-relaxed text-[var(--color-charcoal)]">
+        Every phase of this plan depends on donor support. Your gift helps move the Champion House toward a
+        fully restored future.
+      </p>
+      <a href="/donate" class="btn-primary mt-6 shadow-lg shadow-black/50 ring-1 ring-white/15">Support the Restoration</a>
+    </section>
+  </article>
+</Layout>
