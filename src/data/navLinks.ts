@@ -5,5 +5,5 @@ export const navLinks = [
   { href: "/preservation-plan", label: "Preservation Plan" },
   { href: "/gallery", label: "Gallery" },
   { href: "/partners", label: "Partners" },
-  { href: "/visit", label: "Visit / Contact" },
+  { href: "/contact", label: "Contact" },
 ];
