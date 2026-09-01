@@ -5,13 +5,13 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header class="border-b border-[var(--color-stone)] bg-[var(--color-cream)]">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-x-6 px-6 py-5">
     <a href="/" class="text-lg tracking-wide text-[var(--color-ink)]">
       <span class="block text-xl">The General Henry Champion House</span>
       <span class="mt-1 block text-sm eyebrow text-[var(--color-brick)]">Colchester, Connecticut <span class="block lg:inline">&middot; Est. 1790 &middot;</span></span>
     </a>
 
-    <nav class="hidden items-center gap-6 min-[1056px]:flex">
+    <nav class="hidden items-center gap-4 min-[1152px]:flex">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -41,7 +41,7 @@ const currentPath = Astro.url.pathname;
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
-        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[var(--color-stone)] text-[var(--color-ink)] min-[1056px]:hidden"
+        class="flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-[var(--color-stone)] text-[var(--color-ink)] min-[1152px]:hidden"
       >
         <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
@@ -55,7 +55,7 @@ const currentPath = Astro.url.pathname;
 
   <nav
     id="mobile-menu"
-    class="hidden flex-col border-t border-[var(--color-stone)] px-6 py-2 min-[1056px]:hidden"
+    class="hidden flex-col border-t border-[var(--color-stone)] px-6 py-2 min-[1152px]:hidden"
   >
     {navLinks.map((link) => (
       <a
